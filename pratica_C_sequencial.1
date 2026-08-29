@@ -1,0 +1,906 @@
+
+
+1 
+#include<stdio.h>
+int main () {
+//Declaracao das variaveis
+int inteiro1,inteiro2,soma;
+   //Entrada de dados
+    printf("Entre com o primeiro inteiro: ");
+    scanf("%d" , &inteiro1);
+    printf("Entre com o segundo inteiro:");
+    scanf("%d" , &inteiro2);
+   //processamento
+    soma = inteiro1 + inteiro2;
+   //Saida de dados
+    printf("A=soma%d\n",  soma);
+    return 0;
+}
+
+2.
+#include<stdio.h>
+int main () {
+    //declaracao das variaveis
+    float real1,real2,subtracao;
+        //entrada de dados
+        printf("Entre com o primeiro real: ");
+        scanf("%f" , &real1);
+        printf("Entre com o segundo real: ");
+        scanf("%f" , &real2);
+       //processamento
+        subtracao = real1 - real2;
+       //Saida de dados
+        printf("A subtracao%.2f\n e:", subtracao);
+        return 0;
+}
+
+3.
+#include<stdio.h>
+int main () {
+
+    //Declaração das variaveis
+    float inteiro1, inteiro2,divisao;
+    //Entrada de dados
+    printf("Entre com o primeiro inteiro: ");
+    scanf("%f" , &inteiro1);
+    printf("Enre com o segundo ineiro:");
+    scanf("%f" , &inteiro2);
+    //processamento
+    divisao = inteiro1 / inteiro2;
+    //Saida de dados
+    printf("A divisao%.2f\n:", divisao);
+    return 0;
+}
+
+4.
+#include<stdio.h>
+int main () {
+    //Declaração das variaveis
+    float nota1,nota2,nota3;
+    float media;
+    //Entrada de dados
+    printf("Entre com a primeira nota:\n");
+    scanf("%f" , &nota1);
+    printf("Entre com a segunda nota:\n");
+    scanf("%f" , &nota2);
+    printf("Entre com a terceira nota:\n");
+    scanf("%f" , &nota3);
+
+    //processamento
+    media = (nota1 + nota2 + nota3) / 3;
+    //Saida de dados
+    printf("A media das notas e:%.2f\n", media);
+
+    return 0;
+}
+
+
+5.
+#include<stdio.h>
+    int main () {
+    //Declaração das variaveis
+    float nota1,nota2;
+    float peso1,peso2,media_ponderada;
+        //Entrada de dados
+        printf("Digite a primeira nota:\n");
+        scanf("%f" , &nota1);
+        printf("Digite a segunda nota:\n");
+        scanf("%f" , &nota2);
+        printf("Digite o primeiro peso:\n");
+        scanf("%f" , &peso1);
+        printf("Digite o segundo peso:\n");
+        scanf("%f" , &peso2);
+        //Processamento
+        media_ponderada = (nota1 * peso1 + nota2 * peso2) / (peso1 + peso2);
+        //Saida de dados
+        printf("A media ponderada das notas:%.2f\n", media_ponderada);
+        return 0;
+    }
+
+6.
+      //Tabuda de multiplicação
+#include<stdio.h>
+int main (){
+
+    //Declaração das variaveis
+    int numero;
+    int i;
+    int resultado;
+        //Entrada de dados
+        printf("Digite um numero da Tabuda: ");
+        scanf("%d" , &numero);
+       //Processamento
+        for( i = 1; i <= 10; i++) {
+            resultado = numero * i;
+          //Saida de dados
+            printf("%d x %d = %d\n", numero,i,resultado);
+        }
+
+        return 0;
+}
+
+
+7.
+#include<stdio.h>
+#include<math.h>
+int main () {
+    //Declaração das variaveis
+    float numero1,numero2;
+    float elevado_ao_outro;
+        //Entrada de dados
+        printf("Digite o primeiro numero: ");
+        scanf("%f" , &numero1);
+        printf("Digite o segundo numero: ");
+        scanf("%f" , &numero2);
+         //Processamento
+         elevado_ao_outro = pow(numero1,numero2);
+        //Saida de dados
+        printf("Resultado de %.2f elevado %.2f:%.2f\n",numero1,numero2,elevado_ao_outro);
+        return 0;
+}
+
+
+#include<stdio.h>
+#include<math.h>
+int main () {
+    //Declaração das variaveis
+
+    double numero = 12.0;
+    double raiz,quadrada;
+       //calculo
+        raiz = sqrt(numero);
+
+        quadrado = pow(numero, 2);
+
+        //Saida de dados
+        printf("Numero original: %.0f\n", raiz);
+        printf("A raiz quadrada desse numero: %.0f\n", raiz);
+        printf("Esse numero elevado ao quadrada: %.0f\n", quadrada);
+
+        return 0;
+}
+
+
+9.
+#include<stdio.h>
+int main (){
+
+    //Declaracão das variaveis
+   double valor,salario_do_funcionario,salario_minimo;
+
+       //Entrada de dados
+        printf("Digite o valor do salario do funcionario:\n");
+        scanf("%lf" , &salario_do_funcionario);
+        printf("Digite o salario minimo do funcionario:\n");
+        scanf("%lf" , &salario_minimo);
+        //Processamento
+        valor = salario_do_funcionario / salario_minimo;
+       //Saida de dados
+        printf("quantos salarios minimos ganha esse funcionario? %.1lf\n", valor);
+        return 0;
+}
+
+
+10.
+#include <stdio.h>
+
+Int main() {
+    // Declaração das variáveis 
+    Double A, B, C;
+    Double pi = 3.14159; // Valor padrão geralmente usado
+
+    // Declaração das variáveis 
+    Double triangulo_area, circulo_area, trapezio_area, quadrado_area, retangulo_area;
+
+    // Entrada de dados 
+    Printf(“Digite os valores de A, B e C: “);
+    Scanf(“%lf %lf %lf”, &A, &B, &C);
+
+    // Processamento (Cálculos)
+    Triangulo_area = (A * C) / 2.0;
+    Circulo_area = pi * C * C;
+    Trapezio_area = ((A + B) * C) / 2.0;
+    Quadrado_area = B * B;
+    Retangulo_area = A * B;
+
+    // Saída de dados 
+    Printf(“TRIANGULO: %.3lf\n”, triangulo_area);
+    Printf(“CIRCULO: %.3lf\n”, circulo_area);
+    Printf(“TRAPEZIO: %.3lf\n”, trapezio_area);
+    Printf(“QUADRADO: %.3lf\n”, quadrado_area);
+    Printf(“RETANGULO: %.3lf\n”, retangulo_area);
+
+    Return 0;
+}
+
+
+11.
+#include<stdio.h>
+#include<math.h>
+int main () {
+    //Declaração das variaveis
+    float valor_da_diagonal,area;
+    //Entrada de dados
+        printf("Digite o valor da diagonal do qudrado: ");
+        scanf("%f" , &valor_da_diagonal);
+    //processamento
+        area = (valor_da_diagonal * valor_da_diagonal) / 2.0;
+    //Saida de dados
+        printf("A area de um quadrado com  diagonal %.2f eh.%.2f\n", valor_da_diagonal,area);
+
+        return 0;
+}
+
+
+12.
+#include<stdio.h>
+#define IMPOSTO_DO_SALARIO 0.05;
+int main () {
+    //Declaração das variaveis
+    float salario,valor_do_imposto;
+    //Entrada de dados
+        printf("Digite o salario do funcionario: ");
+        scanf("%f" , &salario);
+    //Processamento
+        valor_do_imposto = salario * IMPOSTO_DO_SALARIO;
+    //Saida de dados
+        printf("O imposto a ser pago e: R$%.2f\n", valor_do_imposto);
+
+        return 0;
+}
+
+13.
+#include <stdio.h>
+
+Int main() {
+    // Declaracao das variaveis
+    Float salario_minimo, valor_kilowatt, kwh_consumido;
+    Float valor_pago_residencia, valor_com_desconto;
+
+    // Entrada de dados
+    Printf(“Digite o valor do salario minimo: “);
+    Scanf(“%f”, &salario_minimo);
+
+    Printf(“Digite a quantidade de kWh consumido pela residencia: “);
+    Scanf(“%f”, &kwh_consumido);  
+
+    // Processamento 
+    Valor_kilowatt = salario_minimo / 500.0;
+    Valor_pago_residencia = kwh_consumido * valor_kilowatt;
+    Valor_com_desconto = valor_pago_residencia * 0.85; // 15% de desconto
+
+    // Saida de dados
+    Printf(“O valor em reais de cada kilowatt: %.2f\n”, valor_kilowatt);
+    Printf(“O valor em reais a ser pago por essa residencia: %.2f\n”, valor_pago_residencia);
+    Printf(“O novo valor a ser pago com 15%% de desconto: %.2f\n”, valor_com_desconto);      
+
+    return 0;
+}    
+ 
+14.
+   #include <stdio.h>
+int main () {
+    //Declaração das variaveis
+    float peso_atualkg,peso_em_gramas,novo_peso_kg,valor_inteiro;
+
+    //Entrada de dados
+        printf("Digite o peso atual da pessoa: ");
+        scanf("%f" , &peso_atualkg);
+        printf("Digite o valor inteiro: ");
+        scanf("%f" , &valor_inteiro);
+    //Processamento
+        peso_em_gramas = peso_atualkg * 1000.0;
+        novo_peso_kg = peso_atualkg * 1.05;
+
+    //Saida de dados
+        printf(" O peso dessa pessoa em gramas %.2f\n",peso_em_gramas);
+        printf(" O novo peso da pessoa em gramas %.2f\n",novo_peso_kg);
+
+        return 0;
+}
+ 
+15.
+#include<stdio.h>
+int main () {
+    //Declaração das variaveis
+    float ano_atual,ano_de_nascimento,semanas,idade;
+
+
+    //Entrada de dados
+        printf("Ano de nascimento de uma pessoa: ");
+        scanf("%f" , &ano_de_nascimento);
+        printf("Ano atual: ");
+        scanf("%f" , &ano_atual);
+    //Processamento
+        idade = ano_atual - ano_de_nascimento;
+        semanas = idade * 52;
+    //Saida de dados
+        printf("A idade dessa pessoa:%.2f\n", idade);
+        printf("Essa idade convertida em semanas:%.2f\n", semanas);
+
+        return 0;
+}
+
+
+16.
+#include<stdio.h>
+int main () {
+    //Declaração das variaveis
+    char primeiro[50];
+    char ultimo[50];
+    char segundo[50];
+    char outro[50];
+
+    //Entrada de dados
+        printf("Digite seu primeiro e ultimo nome: ");
+        scanf("%s %s" , primeiro, ultimo);
+        printf("Digite seu segundo  e outro nome: ");
+        scanf("%s %s" , segundo,outro);
+    //saida
+        printf("Primeiro nome:%s\n", primeiro);
+        printf("ultimo nome:%s\n", ultimo);
+        printf("segundo nome:%s\n", segundo);
+        printf("outro nome:%s\n", outro);
+
+        return 0;
+}
+
+
+17.
+#include <stdio.h>
+
+Int main() {
+    // Declaração das variáveis
+    Float total;
+    Float q1, v1, q2, v2, q3, v3;
+    
+    // Entrada de dados
+    Printf(“Digite a quantidade e o valor de tres produtos:\n”);
+    Scanf(“%f %f %f %f %f %f”, &q1, &v1, &q2, &v2, &q3, &v3);
+    
+    // Processamento
+    Total = (q1 * v1) + (q2 * v2) + (q3 * v3);
+    
+    // Saida de dados
+    Printf(“O valor total dos tres produtos e: %.2f\n”, total);
+    
+    return 0;
+}
+
+
+18.
+#include<stdio.h>
+int main () {
+    //Declaração das variaveis
+    float largura,comprimento,area_total,lote;
+
+    //Entrada de dados
+        printf("Digite a largura:\n");
+        scanf("%f" , &largura);
+        printf("Digite o comprimento:\n");
+        scanf("%f" , &comprimento);
+    //Processamento
+        area_total = (largura * comprimento);
+    //Saida de dados
+        printf("A area total de um lote%.2f\n", area_total,lote);
+        return 0;
+}
+
+19.
+int resto1,resto2;
+    float media;
+    float soma;
+    //Entrada de dados
+        printf("Digite o primeiro valor: ");
+        scanf("%d" , &num1);
+        printf("Digite o segundo valor: ");
+        scanf("%d" , &num2);
+    //Processamento
+        soma = (num1 + num2);
+        media = soma / 2.0;
+
+        resto1 = num1 % num2;
+        resto2 = num2 % num1;
+
+    //Saida de dados
+        printf("Somatorio:%\n", soma);
+        printf("media:%\n", media);
+        printf("Resto da divisao de %d por %d:%.d\n", num1,resto1);
+
+        return 0;
+}
+
+20.
+#include<stdio.h>
+int main () {
+    //Declaração das variaveis
+    float comprimento,largura,pronfundidade,volume;
+    //Entrada de dados
+        printf("Digite o comprimento da piscina(em metros): ");
+        scanf("%f" , &comprimento);
+        printf("Digite a largura da piscina(em metros): ");
+        scanf("%f" , &largura);
+        printf("Digite a pronfudidade da piscina(em metros): ");
+        scanf("%f" , &pronfundidade);
+    //Processamento
+        volume = comprimento * largura * pronfundidade;
+    //Saida
+        printf("comprimento: %.2f m\n", comprimento);
+        printf("largura: %.2f m\n", largura);
+        printf("pronfundidade: %.2f m³\n", volume);
+
+        return 0;
+}
+
+21.
+#include <stdio.h>
+
+Int main() {
+    // Declaração das variáveis
+    Float valor_pago = 0;
+    Float troco = 0;
+    Float total_compra = 0;
+    Float preco_produto = 0;
+
+    // Entrada de dados: Leitura do preço de 5 produtos
+    Printf(“--- Entrada de Produtos ---\n”);
+    For (int i = 1; i <= 5; i++) {
+        Printf(“Digite o valor do produto %d: R$ “, i);
+        Scanf(“%f”, &preco_produto);
+        Total_compra += preco_produto; // Acumula o valor no total
+    }
+
+    // Exibe o total da compra e pede o pagamento
+    Printf(“\nTotal da compra: R$ %.2f\n”, total_compra);
+    Printf(“Digite o valor pago pelo cliente: R$ “);
+    Scanf(“%f”, &valor_pago);
+
+    // Processamento: Cálculo do troco
+    Troco = valor_pago – total_compra;
+
+    // Saída de dados com validação simples
+    If (troco < 0) {
+        Printf(“\nValor pago é insuficiente! Falta: R$ %.2f\n”, -troco);
+    } else {
+        Printf(“\nInforme o troco que sera devolvido: R$ %.2f\n”, troco);
+    }
+
+    return 0;
+}
+
+22.
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    int a = 10, b = 20, c = 30;
+    int temp; //guarda o valor
+
+    temp = a;
+    a = b;
+    b = c;
+    c = temp;
+
+    printf("a = b %d, b = c %d, c = a %d\n", a,b,c);
+
+    return 0;
+}
+
+23.
+#include <stdio.h>
+
+int main() {
+   //Declaração das variaveis
+   float valor,produto,desconto;
+   //Entrada de dados
+        printf("Digite um valor do produto: ");
+        scanf("%f" , &valor);
+    //Processamento
+        desconto = 100 * 0.09;
+        produto = valor - desconto;
+    //Saida
+        printf("O novo valor do produto com desconto e: R$ %.2f\n", produto);
+
+        return 0;
+}
+
+24.
+#include <stdio.h>
+#include <math.h> // 
+
+int main() {
+    // Declaração das variáveis
+    float poupanca_programada, valor_acumulado;
+    float taxa_juros = 0.005; // 0.5% ao mês (i)
+    int meses = 12;           // Exemplo: 12 meses (n)
+
+    // Entrada de dados
+    Printf(“Digite a aplicacao da poupanca programada: “);
+    scanf(“%f”, &poupanca_programada);
+
+    // Processamento 
+    valor_acumulado = poupanca_programada * ((pow(1 + taxa_juros, meses) – 1) / taxa_juros);
+
+    // Saída
+    Printf(“A aplicacao da poupanca programada acumulou: R$ %.2f\n”, valor_acumulado);
+
+    return 0;
+}
+
+25.
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    float distancia, tempo, velocidade_kmh, velocidade_ms;
+
+    // Entrada de dados
+    printf(“Digite a distancia entre dois pontos (kilometros): “);
+    scanf(“%f”, &distancia);
+
+    printf(“Digite o tempo gasto (horas): “);
+    scanf(“%f”, &tempo);
+
+    // Processamento
+    velocidade_kmh = distancia / tempo;        
+    velocidade = velocidade_kmh / 3.6;  // conversão para m/s
+
+    // Saída
+    printf(“A velocidade media em km/h: %.2f\n”, velocidade_kmh);
+    printf(“A velocidade em metros por segundo: %.2f\n”, velocidade_ms);
+
+    return 0;
+}
+
+26.
+#include <stdio.h>
+
+int main() {
+    float a, b, c, d, e, f;
+    float D, Dx, Dy, x, y;
+
+    // Leitura dos coeficientes
+    printf(“Digite os coeficientes a, b, c (primeira equacao):\n”);
+    scanf(“%f %f %f”, &a, &b, &c);
+
+    printf(“Digite os coeficientes d, e, f (segunda equacao):\n”);
+    scanf(“%f %f %f”, &d, &e, &f);
+
+    //processamento 
+    D  = (a * e) – (b * d);
+    Dx = (c * e) – (b * f);
+    Dy = (a * f) – (c * d);
+
+    if(D != 0) {
+        X = Dx / D;
+        Y = Dy / D;
+        printf(“Sistema Possivel e Determinado (SPD).\n”);
+        printf(“x = %.2f\n”, x);
+        printf(“y = %.2f\n”, y);
+    } else {
+        if (Dx != 0 || Dy != 0) {
+            printf(“Sistema Impossivel (SI): não há solucao.\n”);
+        } else {
+            printf(“Sistema Indeterminado (SPI): infinitas solucoes.\n”);
+        }
+    }
+
+    return 0;
+}
+
+
+
+27.
+#include<stdio.h>
+#include<math.h>
+int main () {
+    //Declaração das variaveis
+    float temperatura_em_Fahrenheit,temperatura_celsius;
+    //Entrada de dados
+        printf("Digite a temperatura em graus(celsius): ");
+        scanf("%f" , &temperatura_celsius);
+        printf("Digite a temperatura em graus(Fahrenheit): ");
+        scanf("%f" , &temperatura_em_Fahrenheit);
+    //Processamento
+        temperatura_em_Fahrenheit = (temperatura_celsius * 9.0 / 5.0) + 32.0;
+    //Saida de dados
+        printf("A temperatura em Fahrenheit: %.2f\n", temperatura_em_Fahrenheit);
+
+        return 0;
+}
+
+28.
+#include <stdio.h>
+
+int main() {
+    // Declaracao das variaveis
+    float valor_da_compra, valor_da_prestacao; 
+
+    // Entrada de dados
+    printf("Digite o valor da compra:\n");
+    scanf("%f", &valor_da_compra);
+
+    printf("Digite o valor da prestacao:\n"); 
+    scanf("%f", &valor_da_prestacao);
+
+
+    valor_da_compra = valor_da_prestacao * 0.5;
+
+    // Saida
+    printf("O valor da compra e: %.2f\n", valor_da_compra);
+    printf("O valor da prestacao e: %.2f\n", valor_da_prestacao);
+
+    return 0;
+}
+
+
+29.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    float preco_do_custo,valor_da_venda;
+    const float taxa = 0.3;
+    //Entrada
+        printf("Digite o preco do custo do produto: ");
+        scanf("%f" , &preco_do_custo);
+
+    //Processamento
+        valor_da_venda = preco_do_custo + (preco_do_custo * taxa);
+    //Saida
+        printf("O preco do custo do produto: %.2f\n", preco_do_custo);
+        printf("O valor da venda do produto: %.2f\n", valor_da_venda);
+
+        return 0;
+}
+
+
+30.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    float custo_da_fabrica,distribuidor,imposto,custo_do_consumidor;
+     //Entrada de dados
+        printf("Digite o custo da fabrica do carro: ");
+        scanf("%f" , &custo_da_fabrica);
+    //Processamento
+        distribuidor = custo_da_fabrica * 0.28;
+        imposto = custo_da_fabrica * 0.45;
+        custo_do_consumidor = custo_da_fabrica + distribuidor + imposto;
+    //Saida
+        printf("O custo da fabrica do carro: %.2f\n", custo_da_fabrica);
+        printf("O custo do consumidor mesmo: %.2f\n", custo_do_consumidor);
+
+        return 0;
+
+}
+
+31.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    float salario_informado,novo_salario;
+    //Entrada de dados
+        printf("Digite o salario informado: ");
+        scanf("%f" , &salario_informado);
+    //Processamento
+        novo_salario = salario_informado * 1.37;
+    //Saida
+        printf("O novo salario do usurio:%.2f\n", novo_salario);
+
+        return 0;
+}
+
+32.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    int ano_atual,ano_de_nascimento,idade,ano_futuro;
+    //Entrada de dados
+        printf("Ano de nascimento de uma pessoa: ");
+        scanf("%d" , &ano_de_nascimento);
+        printf("Ano atual da pessoa: ");
+        scanf("%d" , &ano_atual);
+    //Processamento
+        idade = ano_atual - ano_de_nascimento;
+        ano_futuro = 2028 - ano_de_nascimento;
+    //Saida
+        printf("A idade dessa pessoa: %d anos\n", idade);
+        printf("A idade em 2028: %d anos\n", ano_futuro);
+
+        return 0;
+}
+33.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    float quantidade_de_degraus,altura_total_para_subir,altura_do_degrau;
+    //Entrada de dados
+        printf("Digite a altura total para subir: ");
+        scanf("%f" , &altura_total_para_subir);
+        printf("Digite a altura para subir o degrau: ");
+        scanf("%f" , &altura_do_degrau);
+    //Processamento
+        quantidade_de_degraus = altura_total_para_subir / altura_do_degrau;
+    //Saida
+        printf("Quantos degraus o usuario devera subir: %.2f\n", quantidade_de_degraus);
+
+        return 0;
+}
+
+34.
+#include<stdio.h.>
+int main () {
+    //Declaração das variaveis
+    float peso_Kg,altura_metros,imc;
+    //Entrada
+        printf("Digite seu peso Kg: ");
+        scanf("%f" , &peso_Kg);
+        printf("Digite sua altura_metros: ");
+        scanf("%f" , &altura_metros);
+    //Processamento
+        imc = peso_Kg / (altura_metros * altura_metros);
+    //Saida
+        printf("\n--- Resualtado ---\n");
+        printf("O seu peso em kg: %.2f\n", peso_Kg);
+        printf("A sua altura em metros:%.2f\n", altura_metros);
+        printf("imc: %.2f\n", imc);
+
+        return 0;
+}
+
+35.
+#include <stdio.h>
+
+Int main() {
+    // Declaração de variáveis
+    Int num_apartamentos;
+    Float valor_diaria_normal, valor_diaria_promo;
+    Float arrecadacao_100, arrecadacao_70, prejuizo_promocao;
+
+    // Entrada de dados
+    Printf(“Digite o numero de apartamentos do hotel: “);
+    Scanf(“%d”, &num_apartamentos);
+
+    Printf(“Digite o valor da diaria normal para o final de semana completo: R$ “);
+    Scanf(“%f”, &valor_diaria_normal);
+
+    // Cálculos
+    // 1. Valor promocional com 25% de desconto
+    Valor_diaria_promo = valor_diaria_normal * 0.75;
+
+    // 2. Total arrecadado com 100% de ocupação (usando valor promocional)
+    Arrecadacao_100 = num_apartamentos * valor_diaria_promo;
+
+    // 3. Total arrecadado com 70% de ocupação (usando valor promocional)
+    Arrecadacao_70 = (num_apartamentos * 0.70) * valor_diaria_promo;
+
+    // 4. Valor que deixou de arrecadar na ocupação de 100% comparado ao valor normal
+    Prejuizo_promocao = (num_apartamentos * valor_diaria_normal) – arrecadacao_100;
+
+    // Exibição dos resultados
+    Printf(“\n=== RESULTADOS DA PROMOÇÃO ===\n”);
+    Printf(“• Valor promocional da diaria: R$ %.2f\n”, valor_diaria_promo);
+    Printf(“• Total arrecadado com 100%% de ocupacao: R$ %.2f\n”, arrecadacao_100);
+    Printf(“• Total arrecadado com 70%% de ocupacao: R$ %.2f\n”, arrecadacao_70);
+    Printf(“• Valor deixado de arrecadar devido ao desconto (com 100%% ocupado): R$ %.2f\n”, prejuizo_promocao);
+
+    Return 0;
+}
+
+36.
+#include <stdio.h>
+#include <math.h>
+
+Int main() {
+    Float custo_espetaculo, preco_convite;
+    Float lucro_desejado_valor, faturamento_lucro;
+    Int qtd_para_custo, qtd_para_lucro;
+
+    // Entrada de dados
+    Printf(“Digite o custo do espetaculo: “);
+    Scanf(“%f”, &custo_espetaculo);
+
+    Printf(“Digite o preco do convite: “);
+    Scanf(“%f”, &preco_convite);
+
+    // Evita divisao por zero
+    If (preco_convite <= 0) {
+        Printf(“O preco do convite deve ser maior que zero.\n”);
+        Return 1;
+    }
+
+    // Calculo da quantidade para cobrir apenas os custos (arredondando para cima com ceil)
+    Qtd_custo = ceil(custo_espetaculo / preco_convite);
+
+    // Calculo do lucro de 23% sobre o custo
+    Lucro_desejado_valor = custo_espetaculo * 0.23;
+    Faturamento_lucro = custo_espetaculo + lucro_desejado_valor;
+    Qtd_lucro = ceil(faturamento_lucro / preco_convite);
+
+    // Saida de resultados
+    Printf(“\n--- RESULTADOS ---\n”);
+    Printf(“Quantidade de convites para cobrir os custos: %d\n”, qtd_custo);
+    Printf(“Lucro desejado (23%): R$ %.2f\n”, lucro_desejado_valor);
+    Printf(“Quantidade de convites para obter o lucro de 23%: %d\n”, qtd_lucro);
+
+    Return 0;
+}
+
+37.
+#include<stdio.h>
+int main () {
+        //Declaração das variaveis
+        float tempo_viagem,velocidade_media,distancia,litros_gastos;
+        float CONSUMO_VEICULO = 12.0;
+        //Entrada de dados
+        printf("Digite o tempo gasto na viagem(em horas): ");
+        scanf("%f" , &tempo_viagem);
+
+        printf("Digite a velocidade media(em km\h): ");
+        scanf("%f" , &velocidade_media);
+
+        //Processamento
+        distancia = tempo_viagem * velocidade_media;
+        litros_gastos = distancia / CONSUMO_VEICULO;
+        //Saida
+        printf("\n--- Resumo da viagem  ---\n");
+        printf("velocidade Media:%.2f km/h\n",velocidade_media);
+        printf("tempo gasto:%.2f km/h\n",tempo_viagem);
+        printf("distancia total:%.2f km/h\n",distancia);
+        printf("combustivel:%.2f litros\n",litros_gastos);
+
+
+        return 0;
+}
+
+38.
+#include <stdio.h>
+
+int main() {
+    int total_Eleitores, votosC1, votosC2, brancos_Nulos;
+    float percC1, percC2, percBrancos_Nulos;
+
+    // Leitura dos dados
+    printf("Digite o numero total de eleitores: ");
+    scanf("%d", &total_Eleitores);
+
+    printf("Digite os votos do primeiro candidato: ");
+    scanf("%d", &votosC1);
+
+    printf("Digite os votos do segundo candidato: ");
+    scanf("%d", &votosC2);
+
+    // Calculo dos votos brancos, nulos ou abstencoes
+    brancos_Nulos = total_Eleitores – (votosC1 + votosC2);
+
+    // Calculo dos percentuais (com cast para float para evitar divisao inteira)
+    percC1 = ((float)votosC1 / total_Eleitores) * 100;
+    percC2 = ((float)votosC2 / total_Eleitores) * 100;
+    percBrancosNulos = ((float)brancos_Nulos / totalEleitores) * 100;
+
+    // Exibicao dos resultados
+    printf("\n--- RESULTADO DA ELEICAO ---\n");
+    printf("Candidato 1: %.2f%% dos votos.\n", percC1);
+    printf("Candidato 2: %.2f%% dos votos.\n", percC2);
+    printf("Brancos/Nulos/Abstencoes: %.2f%%.\n", percBrancosNulos);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
