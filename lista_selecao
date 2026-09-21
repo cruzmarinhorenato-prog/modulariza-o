@@ -1,0 +1,3360 @@
+l
+1.
+#include<stdio.h>
+int main() {
+   //Declaração das variaveis
+   float nota1,nota2,nota3,nota4;
+   float media;
+   //Entrada de dados
+        printf("Digite a primeira nota:\n");
+        scanf("%f" , &nota1);
+        printf("Digite a segunda nota:\n");
+        scanf("%f" , &nota2);
+        printf("Digite a terceira nota:\n");
+        scanf("%f" , &nota3);
+        printf("Digite a quarta nota:\n");
+        scanf("%f" , &nota4);
+    //Processamento
+        media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        printf("A media das notas e:%.2f\n", media);
+
+        if(media >= 7) {
+            printf("Aluno aprovado:!!\n");
+
+    } else {
+            printf("Aluno reprovado:!!\n");
+
+    }
+
+        return 0;
+
+}
+
+
+2.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_atual, valor_aumento, salario_reajustado, percentual_de_aumento;
+
+    // Entrada de dados
+    printf("Digite o salario atual do funcionario: ");
+    scanf("%f", &salario_atual);
+
+    printf("Digite o percentual de aumento: ");
+    scanf("%f", &percentual_de_aumento);
+
+    // Processamento
+    valor_aumento = salario_atual * percentual_de_aumento / 100.0;
+    salario_reajustado = salario_atual + valor_aumento;
+
+    // Saída
+    if (percentual_de_aumento > 0) {
+        printf("O salario reajustado do funcionario: %.2f\n", salario_reajustado);
+        printf("Direito ao aumento do funcionario\n");
+    } else {
+        printf("Não tem direito ao aumento\n");
+    }
+
+    return 0;
+}
+
+3.
+#include <stdio.h>
+#include <string.h>
+int main() {
+    // Declaração de variáveis
+    char senha[20];
+    char ASDEG[]= "123.45";
+    //Entrada de dados
+        printf("Digite a senha do usuario: ");
+        scanf("%s" , senha);
+    //Saida
+        if(strcmp(senha, ASDEG)== 0){
+                printf("A permissao do usuario\n");
+        } else {
+                printf("Negacao de acesso da senha\n");
+        }
+
+        return 0;
+
+}
+
+4.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    int idade;
+
+    //Entrada de dados
+        printf("Digite a idade da pessoa: ");
+        scanf("%d" , &idade);
+
+        printf("A idade da pessoa e:%d\n", idade);
+
+        if(idade >= 18) {
+                printf("Pessoa maior de idade!!\n");
+        } else {
+                printf("Pessoa menor de idade!!\n");
+
+        }
+
+        return 0;
+}
+
+5.
+#include <stdio.h>
+int main () {
+    //Declaração das variaveis
+    float salario_atual,novo_salario;
+
+    //Entrada de dados
+        printf("Digite o salario atual do funcionario:\n");
+        scanf("%f" , &salario_atual);
+
+
+    //processamento e saida
+        if(salario_atual <= 300.0) {
+            novo_salario = salario_atual * 1.50;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario de ate 300:\n");
+
+        } else {
+            novo_salario = salario_atual * 1.30;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario maior que 300\n");
+
+
+        }
+
+        return 0;
+
+}
+
+6.
+#include <stdio.h>
+int main () {
+
+// Declaração das variáveis
+float peso_homens,peso_mulheres,altura_em_metros;
+
+// Entrada de dados
+    printf("Digite a altura em metros: ");
+    scanf("%f", &altura_em_metros);
+
+    // Processamento
+    peso_homens   = (72.7 * altura_em_metros) - 58.0;
+    peso_mulheres = (62.1 * altura_em_metros) - 44.7;
+
+    // Saída
+    printf("O peso ideal dos homens:%.2f kg\n", peso_homens);
+    printf("O peso ideal das mulheres:%.2f kg\n", peso_mulheres);
+
+    return 0;
+
+7.
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    int categoria;
+
+    // Entrada de dados
+    printf("Escolha uma categoria (1 a 5):\n");
+    printf("1 – Infantil A\n2 – Infantil B\n3 – Juvenil A\n4 – Juvenil B\n5 – Senior\n");
+    printf("Digite o numero da categoria: ");
+    scanf("%d", &categoria);
+
+    // Processamento e exibição com base na categoria
+    switch (categoria) {
+        case 1:
+            printf("Categoria Infantil A: de 5 a 7 anos.\n");
+            break;
+        case 2:
+            printf("Categoria Infantil B: de 8 a 10 anos.\n");
+            break;
+        case 3:
+            printf("Categoria Juvenil A: de 11 a 13 anos.\n");
+            break;
+        case 4:
+            printf("Categoria Juvenil B: de 14 a 17 anos.\n");
+            break;
+        case 5:
+            printf("Categoria Senior: maiores de 18 anos.\n");
+            break;
+        default:
+            printf("Opcao invalida! Escolha um numero de 1 a 5.\n");
+            break;
+    }
+
+    return 0;
+}
+
+
+8.
+#include <stdio.h>
+
+int main() {
+    //Declaração das variaveis
+    float nota1, nota2, nota3, media_final;
+    int conceito;
+    //Entrada de dados
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+    //Processamento
+    media_final = (nota1 + nota2 + nota3) / 3.0;
+
+    printf("\nA media final: %.2f\n", media_final);
+
+
+    if (media_final >= 8.0 && media_final <= 10.0) {
+        conceito = 1;
+    } else if (media_final >= 7.0 && media_final < 8.0) {
+        conceito = 2;
+    } else if (media_final >= 6.0 && media_final < 7.0) {
+        conceito = 3;
+    } else if (media_final >= 0.0 && media_final < 6.0) {
+        conceito = 4;
+    } else {
+        conceito = 0; // Média inválida (menor que 0 ou maior que 10)
+    }
+
+    switch(conceito) {
+        case 1:
+            printf("Conceito A: media final entre 8.0 e 10.00.\n");
+            break;
+        case 2:
+            printf("Conceito B: media final entre 7.0 e 8.0.\n");
+            break;
+        case 3:
+            printf("Conceito C: media final entre 6.0 e 7.0.\n");
+            break;
+        case 4:
+            printf("Conceito E: media final menor que 6.0\n");
+            break;
+        default:
+            printf("Nota invalida!\n");
+    }
+
+    return 0;
+}
+
+9.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int codigo;
+    float preco;
+
+    //Entrada de dados
+    printf("Digite o codigo do produto: ");
+    scanf("%d", &codigo);
+    printf("Digite o preco do produto: ");
+    scanf("%f", &preco);
+
+    //processamento
+    printf("\nPreco: R$ %.2f\n", preco);
+    printf("Procedência: ");
+
+    switch(codigo){
+        case 1:
+            printf("Sul\n");
+            break;
+        case 2:
+            printf("Norte\n");
+            break;
+        case 3:
+            printf("Leste\n");
+            break;
+        case 4:
+            printf("Oeste\n");
+            break;
+        case 5:
+        case 6:
+            printf("Nordeste\n");
+            break;
+        case 7:
+        case 8:
+        case 9:
+            printf("Sudeste\n");
+            break;
+        default:
+            if(codigo >= 10 && codigo <= 20){
+                printf("Centro-Oeste\n");
+            }else if(codigo >= 25 && codigo <= 30){
+                printf("Nordeste\n");
+            }else{
+                printf("Importado\n");
+            }
+
+    }
+
+    return 0;
+}
+
+10.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int N1;
+float par_ou_impar;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &N1);
+//Processamento
+    par_ou_impar = N1 / 2.0;
+    printf("Resultado da divisao por 2:%.2f\n",par_ou_impar);
+
+    if(N1 % 2 == 0) {
+        printf("Numero e par: ");
+    }else{
+        printf("Numero e impar: ");
+
+    }
+
+    return 0;
+}
+
+11.
+#include<stdio.h>
+int main () {
+int N1,N2;
+
+    //Entrada de dados
+    printf("Digite o primiro numero: ");
+    scanf("%d" , &N1);
+    printf("Digite o segundo numero: ");
+    scanf("%d" , &N2);
+
+    printf("O numero menor de dois: ");
+
+    //condicional
+        if(N1 <= N2) {
+            printf("%d\n", N1);
+        }else{
+            printf("%d\n", N2);
+        }
+
+        return 0;
+
+}
+
+12.
+#include <stdio.h>
+
+int main(){
+    //declaração de variáveis
+    float N1,N2,N3;
+    float Media = 0;
+    //Entrada de dados
+        printf("Digite as tres notas: ");
+        scanf("%f %f %f" , &N1,&N2,&N3);
+    //processamento
+        Media = (N1 + N2 + N3) / 3;
+
+    if(Media <= 0.0 && Media < 5.0){
+        printf("Aluno reprovado.Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 5.0 &&  Media < 7.0){
+        printf("Exame. Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 7.0 && Media <= 10.00){
+        printf("Aluno aprovado.Media:%.2f\n", Media);
+    }
+
+    else {
+        printf("Media invalida.\n");
+    }
+
+    return 0;
+}
+
+13.
+#include <stdio.h>
+
+Int  main() {
+    // Declaração das variáveis
+    float  idade;
+
+    // Entrada de dados
+    printf(“Digite a idade da pessoa: “);
+    scanf(“%f”, &idade); 
+
+    // Processamento
+    if (idade >= 0.0 && idade <= 0.2) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: recem-nascido\n”); // Correção: aspas fechadas corretamente
+    } 
+    else if (idade >= 0.3 && idade <= 11.0) {
+        printf(“A classificacao e: crianca\n”);
+    } 
+    else if (idade >= 12.0 && idade <= 19.0) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: adolescente\n”);
+    } 
+    else if (idade >= 20.0 && idade <= 55.0) { 
+        printf(“A classificacao e: adulto\n”);
+    } 
+    else if (idade >= 55.0) {
+        printf(“A classificacao e: idoso\n”);
+    } 
+    else {
+        printf(“Idade invalida.\n”);
+    }
+
+    return 0;
+}
+
+14.
+#include <stdio.h>
+int main () {
+//Declaracao das variaveis
+int codigo;
+//Entrada de dados
+    printf(“Digite o codigo do cargo do funcionario: “);
+    scanf(“%d” , &codigo);
+    
+  //Processamento
+switch(codigo){
+case 1:
+       printf(“Cargo Escrituarario:percentual:50,00%.\n”);
+       break;
+case 2: 
+       printf(“Cargo Secretario:percentual:35,00%.\n”); 
+       break;
+case 3:
+       printf(“Cargo Caixa:percentual:20,00%:\n”);
+       break;       
+ case 4:
+       printf(“Cargo Gerente:percentual:10,00.\n”);
+       break;
+case 5:
+       printf(“Cargo Diretor:percentual não tem aumento.\n”);
+       break;
+default:
+       printf(“codigo do cargo invalido.\n”);
+}
+
+  return 0;
+}  
+                              
+15.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int opcao_desejada;
+float raiz_quadrada,soma,finalizar;
+//Entrada de dados
+    printf("Digite a opcao desejada: ");
+    scanf("%d" , &opcao_desejada);
+//Processamento
+    printf("A opcao desajada de cada operacao:%.d\n", opcao_desejada);
+
+    switch(opcao_desejada){
+    case 1:
+        printf("Soma:\n");
+        break;
+
+    case 2:
+        printf("raiz_quadrada:\n");
+        break;
+
+    case 3:
+        printf("Finalizar:\n");
+        break;
+
+    default:
+        printf("Operacao inavalida:\n");
+    }
+        return 0;
+}
+16.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float idade;
+float grupo_de_risco,b,m,a;
+//Entrada de dados
+    printf("Digite a idade da pessoa: ");
+    scanf("%f" , &idade);
+//Processamento
+    if(idade >= 18.0 && idade <= 24.0) {
+       printf("Maior de idade: b:7,m:8,a:9.%.2f\n", idade);
+    }
+    else if (idade >= 25.0 && idade <= 40.0) {
+       printf("idade:b:7,m:2,a:3.%.2f\n", idade);
+    }
+    else if (idade >= 41.0 && idade <= 70.0) {
+       printf("idade a mais: b1:,m:2,a:3.%.2f\n", idade);
+    }
+    else {
+       printf("O codigo do seguro.\n");
+    }
+
+    return 0;
+}
+                                                                                                                                                                                                                                                                                                                                                           
+17.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float angulo_em_graus;
+//Entrada de dados
+    printf("Digite a medida de um angulo em graus: ");
+    scanf("%f" , &angulo_em_graus);
+//Processamento
+    if(angulo_em_graus >= 0.0 && angulo_em_graus <= 90.0){
+       printf("O 1°quadante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 90.0 && angulo_em_graus <= 180.0){
+       printf("O 2° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 180.0 && angulo_em_graus <= 270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus <= 360.0){
+       printf("O 4° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus -90.0){
+       printf("O 1° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -90.0 && angulo_em_graus <= -180.0){
+       printf("O 2º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -180.0 && angulo_em_graus <= -270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -0.0 && angulo_em_graus <= -360.0){
+        printf("O 4º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else {
+        printf("Numero inteiro invalido.\n");
+    }
+      return 0;
+}
+
+18.
+#include <stdio.h>
+
+int main() {
+// Processamento
+    H_minutos = (numero_horas_extras * 60.0) – (2.0 / 3.0) * numero_horas_faltas_minutos);
+
+    // Exibe os valores calculados para conferência
+    printf("\nO numero de horas extras em horas: %.2f\n", numero_horas_extras);
+    printf("O numero de horas, numero de horas faltas: %.2f\n", numero_horas_faltas_minutos);
+    printf("O numero de pontos (H_minutos): %.2f\n\n", H_minutos);
+
+    // Condicionais
+    if (H_minutos >= 2400.0) {
+        printf("Premio: 500\n");
+    }
+    else if (H_minutos > 1800.0 && H_minutos < 2400.0) {
+        printf("Premio: 400\n");
+    }
+    else if (H_minutos > 1200.0 && H_minutos <= 1800.0) {
+        printf("Premio: 300\n");
+    }
+    else if (H_minutos >= 600.0 && H_minutos <= 1200.0) {
+        printf("Premio: 200\n");
+    }
+    else {
+        printf("Premio: 100\n");
+    }
+
+    return 0;
+}
+
+
+19.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_minimo, numero_horas_trabalhadas, dependentes_do_funcionario;
+    float quantidade_horas_extras, salario_do_mes, valor_dependentes;
+    float valor_hora_trabalhada, valor_horas_extras, salario_bruto;
+    float IRRF = 0, salario_liquido;
+
+    // Entrada de dados
+    printf("Digite o salario minimo: ");
+    scanf("%f", &salario_minimo);
+
+    printf("Digite o numero de horas trabalhadas: ");
+    scanf("%f", &numero_horas_trabalhadas);
+
+    printf("Digite a quantidade de dependentes do funcionario: ");
+    scanf("%f", &dependentes_do_funcionario);
+
+    printf("Digite a quantidade de horas extras trabalhadas: ");
+    scanf("%f", &quantidade_horas_extras);
+
+    // Processamento dos valores base
+    valor_hora_trabalhada = salario_minimo / 5.0;
+    salario_do_mes = numero_horas_trabalhadas * valor_hora_trabalhada;
+
+    // Valor por dependente (ex: R$ 32,00 por dependente)
+    valor_dependentes = dependentes_do_funcionario * 32.0;
+
+
+    valor_horas_extras = quantidade_horas_extras * (valor_hora_trabalhada * 1.5);
+
+    // Cálculo do Salário Bruto
+    salario_bruto = salario_do_mes + valor_dependentes + valor_horas_extras;
+
+    // Cálculo do IRRF com base no Salário Bruto
+    if (salario_bruto < 200.0) {
+        printf("\nSalario Bruto inferior a 200.0: R$ %.2f\n", salario_bruto);
+        IRRF = 0.0;
+    }
+    else if (salario_bruto >= 200.0 && salario_bruto <= 500.0) {
+        printf("\nSalario Bruto entre 200.0 e 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.10;
+    }
+    else {
+        printf("\nSalario Bruto superior a 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.20;
+    }
+
+    // Salário Líquido
+      salario_liquido = salario_bruto - IRRF;
+
+
+    if (salario_liquido <= 350.0) {
+        printf("Gratificacao de 100 reais aplicada.\n");
+        salario_liquido += 100.0;
+    }
+    else {
+        printf("Gratificacao de 50 reais aplicada.\n");
+        salario_liquido += 50.0;
+    }
+
+    // Saída final do programa
+    printf("Salario liquido final: R$ %.2f\n", salario_liquido);
+
+    return 0;
+}
+    
+20.
+#include <stdio.h>
+#include <math.h>
+int main(){
+//Declaração das variaveis
+float a,b,c;
+float delta, x1,x2;
+//Entrada de dados
+    printf("Digite o valor de a: ");
+    scanf("%f" , &a);
+    printf("Digite o valor de b: ");
+    scanf("%f" , &b);
+    printf("Digite o valor de c: ");
+    scanf("%f" , &c);
+//Processamento
+    delta = (b * b) - (4 * a * c);
+    printf("Calcule o delta:%.2f\n", delta);
+
+    if(delta < 0){
+        printf("A equacao nao possui raizes reis.\n");
+    }
+    else if(delta == 0){
+        x1 = -b / (2 * a);
+        printf("Delta zero,raiz unica: x = %.2f\n", x1);
+    }
+    else {
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        printf("Duas raizes reais: x1 = %.2f e x2 = %.2f\n", x1, x2);
+    }
+
+    return 0;
+}
+
+21.
+#include <stdio.h>
+#include <ctype.h> 
+
+Int main() {
+    // Declaracao das variaveis
+    char frase[100];
+    int cont = 0;
+    int i; 
+
+    // Entrada de dados
+    printf(“Digite uma frase: “);
+    fgets(frase, sizeof(frase), stdin); 
+
+    // Processamento (percorre a frase letra por letra)
+    for (i = 0; frase[i] != ‘\0’; i++) {
+        char letra = tolower(frase[i]); 
+
+        // Verifica se o caractere atual e uma vogal
+        if (letra == ‘a’ || letra == ‘e’ || letra == ‘i’ || letra == ‘o’ || letra == ‘u’) {
+            cont++;
+        }
+    }
+
+    // Saida
+    if (cont > 0) {
+        printf(“O numero de vogais e: %d\n”, cont);
+    } else {
+        printf(“Não tem vogais.\n”);
+    }
+
+    return 0;
+}
+
+22.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Declaração das variveis
+char frase [100];
+int cont = 0;
+
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase, sizeof(frase) , stdin);
+//Processamento
+    for(int i = 0; frase[i] != '\0'; i++){
+        char letra = tolower(frase [i]);
+
+    if(letra = ' '){
+        cont++;
+    }
+}
+if(frase[0] != '\n' && frase[0] != '\0'){
+    cont = cont + 1;
+}
+
+//Saida
+    if(cont > 0){
+        printf("O numero de palavras desta frase e:%d\n", cont);
+    }else{
+        printf("Frase invalida.\n");
+    }
+
+    return 0;
+}
+
+
+23.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Decalração das variaveis
+int cont = 0;
+int i;
+char frase[100];
+char palavra;
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase,sizeof(frase),stdin);
+//Processamento
+    for(i = 0; frase[i] != '\0'; i++){
+        palavra = tolower(frase[i]);
+
+        if(palavra == 'a'){
+        cont ++
+    }
+}
+//Saida
+    if(cont > 0){
+        printf("Quantidade de vezes da palavra aula e:%d\n", cont);
+    }else{
+        printf("Nao tem a palavra desejada:\n");
+    }
+
+    return 0;
+}
+
+24.
+#include <stdio.h>
+int main (){
+//Declaração das variaveis
+int inteiro_1,inteiro_2,inteiros_3;
+int ordem_c;
+//Entrada de dados
+    printf("Digite os tres valores inteiros: ");
+    scanf("%d %d %d" , &inteiro_1,&inteiro_2,&inteiros_3);
+
+//processamento
+    if(inteiro_1 > inteiro_2){
+        ordem_c = inteiro_1;
+        inteiro_1 = inteiro_2;
+        inteiro_2 = ordem_c;
+    }
+    if(inteiro_1 > inteiros_3){
+        ordem_c = inteiro_1;
+        inteiro_1= inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+    if(inteiro_2 > inteiros_3){
+        ordem_c = inteiro_2;
+        inteiro_2 = inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+
+    //Saida
+    printf("O inteiro do menor para o maior:%d,%d,%d\n", inteiro_1,inteiro_2,inteiros_3);
+    return 0;
+}
+
+25.
+#include<stdio.h>
+int main() {
+//Declaração das variaveis
+int codigo;
+int condicao_de_pagamento;
+//Entrada de dados
+    printf("Digite o codigo do pagamento do produto: ");
+    scanf("%d" , &codigo);
+//Processamento
+    printf("A condicao de pagamento do produto: ");
+
+switch(codigo){
+    case 1:
+            printf("A vista em dinheiro ou cheque,recebe 10% de desconto.\n");
+            break;
+    case 2:
+            printf("A vista no cartao de credito,recebe 5% de desconto.\n");
+            break;
+    case 3:
+            printf("Em 2 vezes,preco normal de etiqueta sem juros.\n");
+            break;
+    case 4:
+            printf("Em 3 vezes,preco normal de etiqueta mais juros de 10%.\n");
+            break;
+    default:
+            printf("Codigo do produto invalido.\n");
+    }
+
+
+return 0;
+}
+
+26.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int num1, num2;
+    char operador;
+    int resultado;
+   
+    //Entrada de dados
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o operador (+, -, *, /): ");
+    scanf(" %c", &operador);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    //processamento
+    printf("\n%d %c %d = ", num1, operador, num2);
+    switch(operador){
+        case '+':
+            resultado = num1 + num2;
+            break;
+        case '-':
+            resultado = num1 - num2;
+            break;
+        case '*':
+            resultado = num1 * num2;
+            break;
+        case '/':
+            resultado = num1 / num2;
+            break;
+        default:
+            printf("Operador inválido!\n");
+            return 1;
+    }
+    printf("%d\n", resultado);
+
+    return 0;
+}
+
+27.
+#include <stdio.h>
+
+int main(){
+//Declaração de variáveis
+int num;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &num);
+//Processamento
+  
+    if(num > 0){
+        printf("Positivo.\n");
+    }
+    else{
+        
+       if (num < 0){
+        printf("negativo.\n");
+       }
+       else{
+            printf("Zero.\n");
+       }
+    }
+            printf("O numero e:%d\n", num);
+    
+
+            return 0;
+    }
+
+28.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int a,b,c;
+//Entrada de dados
+    printf("Entre com os valores dos lados do triangulo:\n");
+    printf("Lado a: ");
+    scanf("%d" , &a);
+    printf("Lado de b: ");
+    scanf("%d" , &b);
+    printf("Lado c: ");
+    scanf("%d" , &c);
+//Processamento
+//Verificar os lados
+    if ((a < b + c) && (b < a + c) && (c < a + b)) {
+
+//verificar o tipo de triangulo
+    if ((a == b) && (b == c)) {
+        printf("Triangulo Equilatero.\n");
+    }
+
+    else if ((a == b) || (a == c) || (b == c)) {
+        printf("Triangulo Isosceles.\n");
+
+    }
+     else {
+        printf("Triangulo Escaleno.\n");
+    }
+}
+ else {
+    printf("Os valores informados nao formam um triangulo.\n");
+ }
+    
+//Saida
+    printf("O valor do triangulo e: %d %d %d\n",  a,b,c);
+
+    return 0;
+}
+
+29.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int num;
+//Entrada de dados
+for(int i = 1; i <= 4; i++){
+        printf("Digite o %d numero: ", i);
+        scanf("%d", &num);
+//Processamento
+    if(num % 2 == 0 && num % 3 == 0){
+        printf("O numero %d e divisivel por 2 e por 3 ao mesmo tempo.\n", num);
+    }
+    
+    else if (num % 2 == 0) {
+            printf("O numero %d e divisivel por 2.\n", num);
+    }
+    else if (num % 3 == 0){
+            printf("O numero %d e divisivel por 3.\n", num);
+    }
+    else {
+            printf("O numero %d nao e divisivel por nenhum dos dois.\n", num);
+        
+       }
+    }
+    
+     return 0;
+}
+
+30.
+#include <stdio.h>
+
+Int main() {
+    Int resposta;
+
+    Printf(“Pense em um dos seguintes animais:\n”);
+    Printf(“leao, cavalo, homem, macaco, morcego, baleia, avestruz, pinguim, pato,      aguia, tartaruga, crocodilo, cobra.\n\n”);
+    Printf(“Responda com 1 para SIM ou 0 para NÃO.\n\n”);
+
+    // 1. Nível Principal: Classe do Animal
+    Printf(“E mamifero? (1-Sim / 0-Não): “);
+    Scanf(“%d”, &resposta);
+
+    If (resposta == 1) {
+        // Subclasse: Mamíferos
+        Printf(“E quadrupede? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        If (resposta == 1) {
+            Printf(“E carnivoro? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+            If (resposta == 1) {
+                Printf(“\nEntao o animal escolhido foi o LEAO.\n”);
+            } else {
+                Printf(“\nEntao o animal escolhido foi o CAVALO.\n”);
+            }
+        } else {
+            // Não quadrúpede (Bípede, Voador ou Aquático)
+            Printf(“E bipede? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                Printf(“E onivoro? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o HOMEM.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o MACACO.\n”);
+                }
+            } else {
+                Printf(“E voador? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o MORCEGO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a BALEIA.\n”);
+                }
+            }
+        }
+    } else {
+        // Não é mamífero. Próxima classe: Aves?
+        Printf(“E uma ave? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        If (resposta == 1) {
+            // Subclasse: Aves
+            Printf(“E não-voadora? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                Printf(“E tropical? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o AVESTRUZ.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o PINGUIM.\n”);
+                }
+            } else {
+                Printf(“E nadadora? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o PATO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a AGUIA.\n”);
+                }
+            }
+        } else {
+            // Não é mamífero nem ave. Próxima classe: Répteis
+            Printf(“E um reptil? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                // Subclasse: Répteis
+                Printf(“Tem casco? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi a TARTARUGA.\n”);
+                } else {
+                    Printf(“E carnivoro? (1-Sim / 0-Não): “);
+                    Scanf(“%d”, &resposta);
+                    If (resposta == 1) {
+                        Printf(“\nEntao o animal escolhido foi o CROCODILO.\n”);
+                    } else {
+                        Printf(“\nEntao o animal escolhido foi a COBRA.\n”);
+                    }
+                }
+            } else {
+                Printf(“\nAnimal não identificado nas categorias fornecidas.\n”);
+            }
+        }
+    }
+
+    Return 0;
+}
+
+
+
+
+
+
+
+1.
+#include<stdio.h>
+int main() {
+   //Declaração das variaveis
+   float nota1,nota2,nota3,nota4;
+   float media;
+   //Entrada de dados
+        printf("Digite a primeira nota:\n");
+        scanf("%f" , &nota1);
+        printf("Digite a segunda nota:\n");
+        scanf("%f" , &nota2);
+        printf("Digite a terceira nota:\n");
+        scanf("%f" , &nota3);
+        printf("Digite a quarta nota:\n");
+        scanf("%f" , &nota4);
+    //Processamento
+        media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        printf("A media das notas e:%.2f\n", media);
+
+        if(media >= 7) {
+            printf("Aluno aprovado:!!\n");
+
+    } else {
+            printf("Aluno reprovado:!!\n");
+
+    }
+
+        return 0;
+
+}
+
+
+2.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_atual, valor_aumento, salario_reajustado, percentual_de_aumento;
+
+    // Entrada de dados
+    printf("Digite o salario atual do funcionario: ");
+    scanf("%f", &salario_atual);
+
+    printf("Digite o percentual de aumento: ");
+    scanf("%f", &percentual_de_aumento);
+
+    // Processamento
+    valor_aumento = salario_atual * percentual_de_aumento / 100.0;
+    salario_reajustado = salario_atual + valor_aumento;
+
+    // Saída
+    if (percentual_de_aumento > 0) {
+        printf("O salario reajustado do funcionario: %.2f\n", salario_reajustado);
+        printf("Direito ao aumento do funcionario\n");
+    } else {
+        printf("Não tem direito ao aumento\n");
+    }
+
+    return 0;
+}
+
+3.
+#include <stdio.h>
+#include <string.h>
+int main() {
+    // Declaração de variáveis
+    char senha[20];
+    char ASDEG[]= "123.45";
+    //Entrada de dados
+        printf("Digite a senha do usuario: ");
+        scanf("%s" , senha);
+    //Saida
+        if(strcmp(senha, ASDEG)== 0){
+                printf("A permissao do usuario\n");
+        } else {
+                printf("Negacao de acesso da senha\n");
+        }
+
+        return 0;
+
+}
+
+4.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    int idade;
+
+    //Entrada de dados
+        printf("Digite a idade da pessoa: ");
+        scanf("%d" , &idade);
+
+        printf("A idade da pessoa e:%d\n", idade);
+
+        if(idade >= 18) {
+                printf("Pessoa maior de idade!!\n");
+        } else {
+                printf("Pessoa menor de idade!!\n");
+
+        }
+
+        return 0;
+}
+
+5.
+#include <stdio.h>
+int main () {
+    //Declaração das variaveis
+    float salario_atual,novo_salario;
+
+    //Entrada de dados
+        printf("Digite o salario atual do funcionario:\n");
+        scanf("%f" , &salario_atual);
+
+
+    //processamento e saida
+        if(salario_atual <= 300.0) {
+            novo_salario = salario_atual * 1.50;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario de ate 300:\n");
+
+        } else {
+            novo_salario = salario_atual * 1.30;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario maior que 300\n");
+
+
+        }
+
+        return 0;
+
+}
+
+6.
+#include <stdio.h>
+int main () {
+
+// Declaração das variáveis
+float peso_homens,peso_mulheres,altura_em_metros;
+
+// Entrada de dados
+    printf("Digite a altura em metros: ");
+    scanf("%f", &altura_em_metros);
+
+    // Processamento
+    peso_homens   = (72.7 * altura_em_metros) - 58.0;
+    peso_mulheres = (62.1 * altura_em_metros) - 44.7;
+
+    // Saída
+    printf("O peso ideal dos homens:%.2f kg\n", peso_homens);
+    printf("O peso ideal das mulheres:%.2f kg\n", peso_mulheres);
+
+    return 0;
+
+7.
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    int categoria;
+
+    // Entrada de dados
+    printf("Escolha uma categoria (1 a 5):\n");
+    printf("1 – Infantil A\n2 – Infantil B\n3 – Juvenil A\n4 – Juvenil B\n5 – Senior\n");
+    printf("Digite o numero da categoria: ");
+    scanf("%d", &categoria);
+
+    // Processamento e exibição com base na categoria
+    switch (categoria) {
+        case 1:
+            printf("Categoria Infantil A: de 5 a 7 anos.\n");
+            break;
+        case 2:
+            printf("Categoria Infantil B: de 8 a 10 anos.\n");
+            break;
+        case 3:
+            printf("Categoria Juvenil A: de 11 a 13 anos.\n");
+            break;
+        case 4:
+            printf("Categoria Juvenil B: de 14 a 17 anos.\n");
+            break;
+        case 5:
+            printf("Categoria Senior: maiores de 18 anos.\n");
+            break;
+        default:
+            printf("Opcao invalida! Escolha um numero de 1 a 5.\n");
+            break;
+    }
+
+    return 0;
+}
+
+
+8.
+#include <stdio.h>
+
+int main() {
+    //Declaração das variaveis
+    float nota1, nota2, nota3, media_final;
+    int conceito;
+    //Entrada de dados
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+    //Processamento
+    media_final = (nota1 + nota2 + nota3) / 3.0;
+
+    printf("\nA media final: %.2f\n", media_final);
+
+
+    if (media_final >= 8.0 && media_final <= 10.0) {
+        conceito = 1;
+    } else if (media_final >= 7.0 && media_final < 8.0) {
+        conceito = 2;
+    } else if (media_final >= 6.0 && media_final < 7.0) {
+        conceito = 3;
+    } else if (media_final >= 0.0 && media_final < 6.0) {
+        conceito = 4;
+    } else {
+        conceito = 0; // Média inválida (menor que 0 ou maior que 10)
+    }
+
+    switch(conceito) {
+        case 1:
+            printf("Conceito A: media final entre 8.0 e 10.00.\n");
+            break;
+        case 2:
+            printf("Conceito B: media final entre 7.0 e 8.0.\n");
+            break;
+        case 3:
+            printf("Conceito C: media final entre 6.0 e 7.0.\n");
+            break;
+        case 4:
+            printf("Conceito E: media final menor que 6.0\n");
+            break;
+        default:
+            printf("Nota invalida!\n");
+    }
+
+    return 0;
+}
+
+9.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int codigo;
+    float preco;
+
+    //Entrada de dados
+    printf("Digite o codigo do produto: ");
+    scanf("%d", &codigo);
+    printf("Digite o preco do produto: ");
+    scanf("%f", &preco);
+
+    //processamento
+    printf("\nPreco: R$ %.2f\n", preco);
+    printf("Procedência: ");
+
+    switch(codigo){
+        case 1:
+            printf("Sul\n");
+            break;
+        case 2:
+            printf("Norte\n");
+            break;
+        case 3:
+            printf("Leste\n");
+            break;
+        case 4:
+            printf("Oeste\n");
+            break;
+        case 5:
+        case 6:
+            printf("Nordeste\n");
+            break;
+        case 7:
+        case 8:
+        case 9:
+            printf("Sudeste\n");
+            break;
+        default:
+            if(codigo >= 10 && codigo <= 20){
+                printf("Centro-Oeste\n");
+            }else if(codigo >= 25 && codigo <= 30){
+                printf("Nordeste\n");
+            }else{
+                printf("Importado\n");
+            }
+
+    }
+
+    return 0;
+}
+
+10.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int N1;
+float par_ou_impar;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &N1);
+//Processamento
+    par_ou_impar = N1 / 2.0;
+    printf("Resultado da divisao por 2:%.2f\n",par_ou_impar);
+
+    if(N1 % 2 == 0) {
+        printf("Numero e par: ");
+    }else{
+        printf("Numero e impar: ");
+
+    }
+
+    return 0;
+}
+
+11.
+#include<stdio.h>
+int main () {
+int N1,N2;
+
+    //Entrada de dados
+    printf("Digite o primiro numero: ");
+    scanf("%d" , &N1);
+    printf("Digite o segundo numero: ");
+    scanf("%d" , &N2);
+
+    printf("O numero menor de dois: ");
+
+    //condicional
+        if(N1 <= N2) {
+            printf("%d\n", N1);
+        }else{
+            printf("%d\n", N2);
+        }
+
+        return 0;
+
+}
+
+12.
+#include <stdio.h>
+
+int main(){
+    //declaração de variáveis
+    float N1,N2,N3;
+    float Media = 0;
+    //Entrada de dados
+        printf("Digite as tres notas: ");
+        scanf("%f %f %f" , &N1,&N2,&N3);
+    //processamento
+        Media = (N1 + N2 + N3) / 3;
+
+    if(Media <= 0.0 && Media < 5.0){
+        printf("Aluno reprovado.Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 5.0 &&  Media < 7.0){
+        printf("Exame. Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 7.0 && Media <= 10.00){
+        printf("Aluno aprovado.Media:%.2f\n", Media);
+    }
+
+    else {
+        printf("Media invalida.\n");
+    }
+
+    return 0;
+}
+
+13.
+#include <stdio.h>
+
+Int  main() {
+    // Declaração das variáveis
+    float  idade;
+
+    // Entrada de dados
+    printf(“Digite a idade da pessoa: “);
+    scanf(“%f”, &idade); 
+
+    // Processamento
+    if (idade >= 0.0 && idade <= 0.2) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: recem-nascido\n”); // Correção: aspas fechadas corretamente
+    } 
+    else if (idade >= 0.3 && idade <= 11.0) {
+        printf(“A classificacao e: crianca\n”);
+    } 
+    else if (idade >= 12.0 && idade <= 19.0) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: adolescente\n”);
+    } 
+    else if (idade >= 20.0 && idade <= 55.0) { 
+        printf(“A classificacao e: adulto\n”);
+    } 
+    else if (idade >= 55.0) {
+        printf(“A classificacao e: idoso\n”);
+    } 
+    else {
+        printf(“Idade invalida.\n”);
+    }
+
+    return 0;
+}
+
+14.
+#include <stdio.h>
+int main () {
+//Declaracao das variaveis
+int codigo;
+//Entrada de dados
+    printf(“Digite o codigo do cargo do funcionario: “);
+    scanf(“%d” , &codigo);
+    
+  //Processamento
+switch(codigo){
+case 1:
+       printf(“Cargo Escrituarario:percentual:50,00%.\n”);
+       break;
+case 2: 
+       printf(“Cargo Secretario:percentual:35,00%.\n”); 
+       break;
+case 3:
+       printf(“Cargo Caixa:percentual:20,00%:\n”);
+       break;       
+ case 4:
+       printf(“Cargo Gerente:percentual:10,00.\n”);
+       break;
+case 5:
+       printf(“Cargo Diretor:percentual não tem aumento.\n”);
+       break;
+default:
+       printf(“codigo do cargo invalido.\n”);
+}
+
+  return 0;
+}  
+                              
+15.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int opcao_desejada;
+float raiz_quadrada,soma,finalizar;
+//Entrada de dados
+    printf("Digite a opcao desejada: ");
+    scanf("%d" , &opcao_desejada);
+//Processamento
+    printf("A opcao desajada de cada operacao:%.d\n", opcao_desejada);
+
+    switch(opcao_desejada){
+    case 1:
+        printf("Soma:\n");
+        break;
+
+    case 2:
+        printf("raiz_quadrada:\n");
+        break;
+
+    case 3:
+        printf("Finalizar:\n");
+        break;
+
+    default:
+        printf("Operacao inavalida:\n");
+    }
+        return 0;
+}
+16.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float idade;
+float grupo_de_risco,b,m,a;
+//Entrada de dados
+    printf("Digite a idade da pessoa: ");
+    scanf("%f" , &idade);
+//Processamento
+    if(idade >= 18.0 && idade <= 24.0) {
+       printf("Maior de idade: b:7,m:8,a:9.%.2f\n", idade);
+    }
+    else if (idade >= 25.0 && idade <= 40.0) {
+       printf("idade:b:7,m:2,a:3.%.2f\n", idade);
+    }
+    else if (idade >= 41.0 && idade <= 70.0) {
+       printf("idade a mais: b1:,m:2,a:3.%.2f\n", idade);
+    }
+    else {
+       printf("O codigo do seguro.\n");
+    }
+
+    return 0;
+}
+                                                                                                                                                                                                                                                                                                                                                           
+17.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float angulo_em_graus;
+//Entrada de dados
+    printf("Digite a medida de um angulo em graus: ");
+    scanf("%f" , &angulo_em_graus);
+//Processamento
+    if(angulo_em_graus >= 0.0 && angulo_em_graus <= 90.0){
+       printf("O 1°quadante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 90.0 && angulo_em_graus <= 180.0){
+       printf("O 2° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 180.0 && angulo_em_graus <= 270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus <= 360.0){
+       printf("O 4° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus -90.0){
+       printf("O 1° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -90.0 && angulo_em_graus <= -180.0){
+       printf("O 2º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -180.0 && angulo_em_graus <= -270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -0.0 && angulo_em_graus <= -360.0){
+        printf("O 4º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else {
+        printf("Numero inteiro invalido.\n");
+    }
+      return 0;
+}
+
+18.
+#include <stdio.h>
+
+int main() {
+// Processamento
+    H_minutos = (numero_horas_extras * 60.0) – (2.0 / 3.0) * numero_horas_faltas_minutos);
+
+    // Exibe os valores calculados para conferência
+    printf("\nO numero de horas extras em horas: %.2f\n", numero_horas_extras);
+    printf("O numero de horas, numero de horas faltas: %.2f\n", numero_horas_faltas_minutos);
+    printf("O numero de pontos (H_minutos): %.2f\n\n", H_minutos);
+
+    // Condicionais
+    if (H_minutos >= 2400.0) {
+        printf("Premio: 500\n");
+    }
+    else if (H_minutos > 1800.0 && H_minutos < 2400.0) {
+        printf("Premio: 400\n");
+    }
+    else if (H_minutos > 1200.0 && H_minutos <= 1800.0) {
+        printf("Premio: 300\n");
+    }
+    else if (H_minutos >= 600.0 && H_minutos <= 1200.0) {
+        printf("Premio: 200\n");
+    }
+    else {
+        printf("Premio: 100\n");
+    }
+
+    return 0;
+}
+
+
+19.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_minimo, numero_horas_trabalhadas, dependentes_do_funcionario;
+    float quantidade_horas_extras, salario_do_mes, valor_dependentes;
+    float valor_hora_trabalhada, valor_horas_extras, salario_bruto;
+    float IRRF = 0, salario_liquido;
+
+    // Entrada de dados
+    printf("Digite o salario minimo: ");
+    scanf("%f", &salario_minimo);
+
+    printf("Digite o numero de horas trabalhadas: ");
+    scanf("%f", &numero_horas_trabalhadas);
+
+    printf("Digite a quantidade de dependentes do funcionario: ");
+    scanf("%f", &dependentes_do_funcionario);
+
+    printf("Digite a quantidade de horas extras trabalhadas: ");
+    scanf("%f", &quantidade_horas_extras);
+
+    // Processamento dos valores base
+    valor_hora_trabalhada = salario_minimo / 5.0;
+    salario_do_mes = numero_horas_trabalhadas * valor_hora_trabalhada;
+
+    // Valor por dependente (ex: R$ 32,00 por dependente)
+    valor_dependentes = dependentes_do_funcionario * 32.0;
+
+
+    valor_horas_extras = quantidade_horas_extras * (valor_hora_trabalhada * 1.5);
+
+    // Cálculo do Salário Bruto
+    salario_bruto = salario_do_mes + valor_dependentes + valor_horas_extras;
+
+    // Cálculo do IRRF com base no Salário Bruto
+    if (salario_bruto < 200.0) {
+        printf("\nSalario Bruto inferior a 200.0: R$ %.2f\n", salario_bruto);
+        IRRF = 0.0;
+    }
+    else if (salario_bruto >= 200.0 && salario_bruto <= 500.0) {
+        printf("\nSalario Bruto entre 200.0 e 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.10;
+    }
+    else {
+        printf("\nSalario Bruto superior a 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.20;
+    }
+
+    // Salário Líquido
+      salario_liquido = salario_bruto - IRRF;
+
+
+    if (salario_liquido <= 350.0) {
+        printf("Gratificacao de 100 reais aplicada.\n");
+        salario_liquido += 100.0;
+    }
+    else {
+        printf("Gratificacao de 50 reais aplicada.\n");
+        salario_liquido += 50.0;
+    }
+
+    // Saída final do programa
+    printf("Salario liquido final: R$ %.2f\n", salario_liquido);
+
+    return 0;
+}
+    
+20.
+#include <stdio.h>
+#include <math.h>
+int main(){
+//Declaração das variaveis
+float a,b,c;
+float delta, x1,x2;
+//Entrada de dados
+    printf("Digite o valor de a: ");
+    scanf("%f" , &a);
+    printf("Digite o valor de b: ");
+    scanf("%f" , &b);
+    printf("Digite o valor de c: ");
+    scanf("%f" , &c);
+//Processamento
+    delta = (b * b) - (4 * a * c);
+    printf("Calcule o delta:%.2f\n", delta);
+
+    if(delta < 0){
+        printf("A equacao nao possui raizes reis.\n");
+    }
+    else if(delta == 0){
+        x1 = -b / (2 * a);
+        printf("Delta zero,raiz unica: x = %.2f\n", x1);
+    }
+    else {
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        printf("Duas raizes reais: x1 = %.2f e x2 = %.2f\n", x1, x2);
+    }
+
+    return 0;
+}
+
+21.
+#include <stdio.h>
+#include <ctype.h> 
+
+Int main() {
+    // Declaracao das variaveis
+    char frase[100];
+    int cont = 0;
+    int i; 
+
+    // Entrada de dados
+    printf(“Digite uma frase: “);
+    fgets(frase, sizeof(frase), stdin); 
+
+    // Processamento (percorre a frase letra por letra)
+    for (i = 0; frase[i] != ‘\0’; i++) {
+        char letra = tolower(frase[i]); 
+
+        // Verifica se o caractere atual e uma vogal
+        if (letra == ‘a’ || letra == ‘e’ || letra == ‘i’ || letra == ‘o’ || letra == ‘u’) {
+            cont++;
+        }
+    }
+
+    // Saida
+    if (cont > 0) {
+        printf(“O numero de vogais e: %d\n”, cont);
+    } else {
+        printf(“Não tem vogais.\n”);
+    }
+
+    return 0;
+}
+
+22.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Declaração das variveis
+char frase [100];
+int cont = 0;
+
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase, sizeof(frase) , stdin);
+//Processamento
+    for(int i = 0; frase[i] != '\0'; i++){
+        char letra = tolower(frase [i]);
+
+    if(letra = ' '){
+        cont++;
+    }
+}
+if(frase[0] != '\n' && frase[0] != '\0'){
+    cont = cont + 1;
+}
+
+//Saida
+    if(cont > 0){
+        printf("O numero de palavras desta frase e:%d\n", cont);
+    }else{
+        printf("Frase invalida.\n");
+    }
+
+    return 0;
+}
+
+
+23.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Decalração das variaveis
+int cont = 0;
+int i;
+char frase[100];
+char palavra;
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase,sizeof(frase),stdin);
+//Processamento
+    for(i = 0; frase[i] != '\0'; i++){
+        palavra = tolower(frase[i]);
+
+        if(palavra == 'a'){
+        cont ++
+    }
+}
+//Saida
+    if(cont > 0){
+        printf("Quantidade de vezes da palavra aula e:%d\n", cont);
+    }else{
+        printf("Nao tem a palavra desejada:\n");
+    }
+
+    return 0;
+}
+
+24.
+#include <stdio.h>
+int main (){
+//Declaração das variaveis
+int inteiro_1,inteiro_2,inteiros_3;
+int ordem_c;
+//Entrada de dados
+    printf("Digite os tres valores inteiros: ");
+    scanf("%d %d %d" , &inteiro_1,&inteiro_2,&inteiros_3);
+
+//processamento
+    if(inteiro_1 > inteiro_2){
+        ordem_c = inteiro_1;
+        inteiro_1 = inteiro_2;
+        inteiro_2 = ordem_c;
+    }
+    if(inteiro_1 > inteiros_3){
+        ordem_c = inteiro_1;
+        inteiro_1= inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+    if(inteiro_2 > inteiros_3){
+        ordem_c = inteiro_2;
+        inteiro_2 = inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+
+    //Saida
+    printf("O inteiro do menor para o maior:%d,%d,%d\n", inteiro_1,inteiro_2,inteiros_3);
+    return 0;
+}
+
+25.
+#include<stdio.h>
+int main() {
+//Declaração das variaveis
+int codigo;
+int condicao_de_pagamento;
+//Entrada de dados
+    printf("Digite o codigo do pagamento do produto: ");
+    scanf("%d" , &codigo);
+//Processamento
+    printf("A condicao de pagamento do produto: ");
+
+switch(codigo){
+    case 1:
+            printf("A vista em dinheiro ou cheque,recebe 10% de desconto.\n");
+            break;
+    case 2:
+            printf("A vista no cartao de credito,recebe 5% de desconto.\n");
+            break;
+    case 3:
+            printf("Em 2 vezes,preco normal de etiqueta sem juros.\n");
+            break;
+    case 4:
+            printf("Em 3 vezes,preco normal de etiqueta mais juros de 10%.\n");
+            break;
+    default:
+            printf("Codigo do produto invalido.\n");
+    }
+
+
+return 0;
+}
+
+26.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int num1, num2;
+    char operador;
+    int resultado;
+   
+    //Entrada de dados
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o operador (+, -, *, /): ");
+    scanf(" %c", &operador);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    //processamento
+    printf("\n%d %c %d = ", num1, operador, num2);
+    switch(operador){
+        case '+':
+            resultado = num1 + num2;
+            break;
+        case '-':
+            resultado = num1 - num2;
+            break;
+        case '*':
+            resultado = num1 * num2;
+            break;
+        case '/':
+            resultado = num1 / num2;
+            break;
+        default:
+            printf("Operador inválido!\n");
+            return 1;
+    }
+    printf("%d\n", resultado);
+
+    return 0;
+}
+
+27.
+#include <stdio.h>
+
+int main(){
+//Declaração de variáveis
+int num;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &num);
+//Processamento
+  
+    if(num > 0){
+        printf("Positivo.\n");
+    }
+    else{
+        
+       if (num < 0){
+        printf("negativo.\n");
+       }
+       else{
+            printf("Zero.\n");
+       }
+    }
+            printf("O numero e:%d\n", num);
+    
+
+            return 0;
+    }
+
+28.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int a,b,c;
+//Entrada de dados
+    printf("Entre com os valores dos lados do triangulo:\n");
+    printf("Lado a: ");
+    scanf("%d" , &a);
+    printf("Lado de b: ");
+    scanf("%d" , &b);
+    printf("Lado c: ");
+    scanf("%d" , &c);
+//Processamento
+//Verificar os lados
+    if ((a < b + c) && (b < a + c) && (c < a + b)) {
+
+//verificar o tipo de triangulo
+    if ((a == b) && (b == c)) {
+        printf("Triangulo Equilatero.\n");
+    }
+
+    else if ((a == b) || (a == c) || (b == c)) {
+        printf("Triangulo Isosceles.\n");
+
+    }
+     else {
+        printf("Triangulo Escaleno.\n");
+    }
+}
+ else {
+    printf("Os valores informados nao formam um triangulo.\n");
+ }
+    
+//Saida
+    printf("O valor do triangulo e: %d %d %d\n",  a,b,c);
+
+    return 0;
+}
+
+29.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int num;
+//Entrada de dados
+for(int i = 1; i <= 4; i++){
+        printf("Digite o %d numero: ", i);
+        scanf("%d", &num);
+//Processamento
+    if(num % 2 == 0 && num % 3 == 0){
+        printf("O numero %d e divisivel por 2 e por 3 ao mesmo tempo.\n", num);
+    }
+    
+    else if (num % 2 == 0) {
+            printf("O numero %d e divisivel por 2.\n", num);
+    }
+    else if (num % 3 == 0){
+            printf("O numero %d e divisivel por 3.\n", num);
+    }
+    else {
+            printf("O numero %d nao e divisivel por nenhum dos dois.\n", num);
+        
+       }
+    }
+    
+     return 0;
+}
+
+30.
+#include <stdio.h>
+
+Int main() {
+    Int resposta;
+
+    Printf(“Pense em um dos seguintes animais:\n”);
+    Printf(“leao, cavalo, homem, macaco, morcego, baleia, avestruz, pinguim, pato,      aguia, tartaruga, crocodilo, cobra.\n\n”);
+    Printf(“Responda com 1 para SIM ou 0 para NÃO.\n\n”);
+
+    // 1. Nível Principal: Classe do Animal
+    Printf(“E mamifero? (1-Sim / 0-Não): “);
+    Scanf(“%d”, &resposta);
+
+    If (resposta == 1) {
+        // Subclasse: Mamíferos
+        Printf(“E quadrupede? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        If (resposta == 1) {
+            Printf(“E carnivoro? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+            If (resposta == 1) {
+                Printf(“\nEntao o animal escolhido foi o LEAO.\n”);
+            } else {
+                Printf(“\nEntao o animal escolhido foi o CAVALO.\n”);
+            }
+        } else {
+            // Não quadrúpede (Bípede, Voador ou Aquático)
+            Printf(“E bipede? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                Printf(“E onivoro? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o HOMEM.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o MACACO.\n”);
+                }
+            } else {
+                Printf(“E voador? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o MORCEGO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a BALEIA.\n”);
+                }
+            }
+        }
+    } else {
+        // Não é mamífero. Próxima classe: Aves?
+        Printf(“E uma ave? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        If (resposta == 1) {
+            // Subclasse: Aves
+            Printf(“E não-voadora? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                Printf(“E tropical? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o AVESTRUZ.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o PINGUIM.\n”);
+                }
+            } else {
+                Printf(“E nadadora? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o PATO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a AGUIA.\n”);
+                }
+            }
+        } else {
+            // Não é mamífero nem ave. Próxima classe: Répteis
+            Printf(“E um reptil? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            If (resposta == 1) {
+                // Subclasse: Répteis
+                Printf(“Tem casco? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+
+                If (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi a TARTARUGA.\n”);
+                } else {
+                    Printf(“E carnivoro? (1-Sim / 0-Não): “);
+                    Scanf(“%d”, &resposta);
+                    If (resposta == 1) {
+                        Printf(“\nEntao o animal escolhido foi o CROCODILO.\n”);
+                    } else {
+                        Printf(“\nEntao o animal escolhido foi a COBRA.\n”);
+                    }
+                }
+            } else {
+                Printf(“\nAnimal não identificado nas categorias fornecidas.\n”);
+            }
+        }
+    }
+
+    Return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.
+#include<stdio.h>
+int main() {
+   //Declaração das variaveis
+   float nota1,nota2,nota3,nota4;
+   float media;
+   //Entrada de dados
+        printf("Digite a primeira nota:\n");
+        scanf("%f" , &nota1);
+        printf("Digite a segunda nota:\n");
+        scanf("%f" , &nota2);
+        printf("Digite a terceira nota:\n");
+        scanf("%f" , &nota3);
+        printf("Digite a quarta nota:\n");
+        scanf("%f" , &nota4);
+    //Processamento
+        media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        printf("A media das notas e:%.2f\n", media);
+
+        if(media >= 7) {
+            printf("Aluno aprovado:!!\n");
+
+    } else {
+            printf("Aluno reprovado:!!\n");
+
+    }
+
+        return 0;
+
+}
+
+
+2.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_atual, valor_aumento, salario_reajustado, percentual_de_aumento;
+
+    // Entrada de dados
+    printf("Digite o salario atual do funcionario: ");
+    scanf("%f", &salario_atual);
+
+    printf("Digite o percentual de aumento: ");
+
+1.
+#include<stdio.h>
+int main() {
+   //Declaração das variaveis
+   float nota1,nota2,nota3,nota4;
+   float media;
+   //Entrada de dados
+        printf("Digite a primeira nota:\n");
+        scanf("%f" , &nota1);
+        printf("Digite a segunda nota:\n");
+        scanf("%f" , &nota2);
+        printf("Digite a terceira nota:\n");
+        scanf("%f" , &nota3);
+        printf("Digite a quarta nota:\n");
+        scanf("%f" , &nota4);
+    //Processamento
+        media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        printf("A media das notas e:%.2f\n", media);
+
+        if(media >= 7) {
+            printf("Aluno aprovado:!!\n");
+
+    } else {
+            printf("Aluno reprovado:!!\n");
+
+    }
+
+        return 0;
+
+}
+
+
+2.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_atual, valor_aumento, salario_reajustado, percentual_de_aumento;
+
+    // Entrada de dados
+    printf("Digite o salario atual do funcionario: ");
+    scanf("%f", &salario_atual);
+
+    printf("Digite o percentual de aumento: ");
+    scanf("%f", &percentual_de_aumento);
+
+    // Processamento
+    valor_aumento = salario_atual * percentual_de_aumento / 100.0;
+    salario_reajustado = salario_atual + valor_aumento;
+
+    // Saída
+    if (percentual_de_aumento > 0) {
+        printf("O salario reajustado do funcionario: %.2f\n", salario_reajustado);
+        printf("Direito ao aumento do funcionario\n");
+    } else {
+        printf("Não tem direito ao aumento\n");
+    }
+
+    return 0;
+}
+
+3.
+#include <stdio.h>
+#include <string.h>
+int main() {
+    // Declaração de variáveis
+    char senha[20];
+    char ASDEG[]= "123.45";
+    //Entrada de dados
+        printf("Digite a senha do usuario: ");
+        scanf("%s" , senha);
+    //Saida
+        if(strcmp(senha, ASDEG)== 0){
+                printf("A permissao do usuario\n");
+        } else {
+                printf("Negacao de acesso da senha\n");
+        }
+
+        return 0;
+
+}
+
+4.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    int idade;
+
+    //Entrada de dados
+        printf("Digite a idade da pessoa: ");
+        scanf("%d" , &idade);
+
+        printf("A idade da pessoa e:%d\n", idade);
+
+        if(idade >= 18) {
+                printf("Pessoa maior de idade!!\n");
+        } else {
+                printf("Pessoa menor de idade!!\n");
+
+        }
+
+        return 0;
+}
+
+5.
+#include <stdio.h>
+int main () {
+    //Declaração das variaveis
+    float salario_atual,novo_salario;
+
+    //Entrada de dados
+        printf("Digite o salario atual do funcionario:\n");
+        scanf("%f" , &salario_atual);
+
+
+    //processamento e saida
+        if(salario_atual <= 300.0) {
+            novo_salario = salario_atual * 1.50;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario de ate 300:\n");
+
+        } else {
+            novo_salario = salario_atual * 1.30;
+            printf("O salario reajustado do funcionario:%.2f\n", novo_salario);
+            printf("Salario maior que 300\n");
+
+
+        }
+
+        return 0;
+
+}
+
+6.
+#include <stdio.h>
+int main () {
+
+// Declaração das variáveis
+float peso_homens,peso_mulheres,altura_em_metros;
+
+// Entrada de dados
+    printf("Digite a altura em metros: ");
+    scanf("%f", &altura_em_metros);
+
+    // Processamento
+    peso_homens   = (72.7 * altura_em_metros) - 58.0;
+    peso_mulheres = (62.1 * altura_em_metros) - 44.7;
+
+    // Saída
+    printf("O peso ideal dos homens:%.2f kg\n", peso_homens);
+    printf("O peso ideal das mulheres:%.2f kg\n", peso_mulheres);
+
+    return 0;
+
+
+
+7.
+#include <stdio.h>
+
+
+
+
+int main() {
+
+
+
+    // Declaração das variáveis
+    int categoria;
+
+
+
+
+    // Entrada de dados
+    printf("Escolha uma categoria (1 a 5):\n");
+    printf("1 – Infantil A\n2 – Infantil B\n3 – Juvenil A\n4 – Juvenil B\n5 – Senior\n");
+    printf("Digite o numero da categoria: ");
+    scanf("%d", &categoria);
+
+    // Processamento e exibição com base na categoria
+    switch (categoria) {
+        case 1:
+            printf("Categoria Infantil A: de 5 a 7 anos.\n");
+            break;
+        case 2:
+            printf("Categoria Infantil B: de 8 a 10 anos.\n");
+            break;
+        case 3:
+            printf("Categoria Juvenil A: de 11 a 13 anos.\n");
+            break;
+        case 4:
+            printf("Categoria Juvenil B: de 14 a 17 anos.\n");
+            break;
+        case 5:
+            printf("Categoria Senior: maiores de 18 anos.\n");
+            break;
+        default:
+            printf("Opcao invalida! Escolha um numero de 1 a 5.\n");
+            break;
+    }
+
+    return 0;
+}
+
+
+8.
+#include <stdio.h>
+
+int main() {
+    //Declaração das variaveis
+    printf("Digite a primeira nota: ");
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+    //Processamento
+    media_final = (nota1 + nota2 + nota3) / 3.0;
+
+    printf("\nA media final: %.2f\n", media_final);
+
+
+    if (media_final >= 8.0 && media_final <= 10.0) {
+        conceito = 1;
+    } else if (media_final >= 7.0 && media_final < 8.0) {
+        conceito = 2;
+    } else if (media_final >= 6.0 && media_final < 7.0) {
+        conceito = 3;
+    } else if (media_final >= 0.0 && media_final < 6.0) {
+        conceito = 4;
+    } else {
+        conceito = 0; // Média inválida (menor que 0 ou maior que 10)
+    }
+
+    switch(conceito) {
+        case 1:
+            printf("Conceito A: media final entre 8.0 e 10.00.\n");
+            break;
+        case 2:
+            printf("Conceito B: media final entre 7.0 e 8.0.\n");
+            break;
+        case 3:
+            printf("Conceito C: media final entre 6.0 e 7.0.\n");
+            break;
+        case 4:
+            printf("Conceito E: media final menor que 6.0\n");
+            break;
+        default:
+            printf("Nota invalida!\n");
+    }
+
+    return 0;
+}
+
+9.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int codigo;
+    float preco;
+
+    //Entrada de dados
+    printf("Digite o codigo do produto: ");
+    scanf("%d", &codigo);
+    printf("Digite o preco do produto: ");
+    scanf("%f", &preco);
+
+    //processamento
+    printf("\nPreco: R$ %.2f\n", preco);
+    printf("Procedência: ");
+
+    switch(codigo){
+        case 1:
+            printf("Sul\n");
+            break;
+        case 2:
+            printf("Norte\n");
+            break;
+        case 3:
+            printf("Leste\n");
+            break;
+        case 4:
+            printf("Oeste\n");
+            break;
+        case 5:
+        case 6:
+            printf("Nordeste\n");
+            break;
+        case 7:
+        case 8:
+        case 9:
+            printf("Sudeste\n");
+            break;
+        default:
+            if(codigo >= 10 && codigo <= 20){
+                printf("Centro-Oeste\n");
+            }else if(codigo >= 25 && codigo <= 30){
+                printf("Nordeste\n");
+            }else{
+                printf("Importado\n");
+            }
+
+    }
+
+    return 0;
+}
+
+10.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int N1;
+float par_ou_impar;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &N1);
+//Processamento
+    par_ou_impar = N1 / 2.0;
+    printf("Resultado da divisao por 2:%.2f\n",par_ou_impar);
+
+    if(N1 % 2 == 0) {
+        printf("Numero e par: ");
+    }else{
+        printf("Numero e impar: ");
+
+    }
+
+    return 0;
+}
+
+11.
+#include<stdio.h>
+int main () {
+int N1,N2;
+
+    //Entrada de dados
+    printf("Digite o primiro numero: ");
+    scanf("%d" , &N1);
+    printf("Digite o segundo numero: ");
+    scanf("%d" , &N2);
+
+    printf("O numero menor de dois: ");
+
+    //condicional
+        if(N1 <= N2) {
+            printf("%d\n", N1);
+        }else{
+            printf("%d\n", N2);
+        }
+
+        return 0;
+
+}
+
+12.
+#include <stdio.h>
+
+int main(){
+    //declaração de variáveis
+    float N1,N2,N3;
+    float Media = 0;
+    //Entrada de dados
+        printf("Digite as tres notas: ");
+        scanf("%f %f %f" , &N1,&N2,&N3);
+    //processamento
+        Media = (N1 + N2 + N3) / 3;
+
+    if(Media <= 0.0 && Media < 5.0){
+        printf("Aluno reprovado.Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 5.0 &&  Media < 7.0){
+        printf("Exame. Media:%.2f\n", Media);
+    }
+
+    else if(Media >= 7.0 && Media <= 10.00){
+        printf("Aluno aprovado.Media:%.2f\n", Media);
+    }
+
+    else {
+        printf("Media invalida.\n");
+    }
+
+    return 0;
+}
+
+13.
+#include <stdio.h>
+
+Int  main() {
+    // Declaração das variáveis
+    float  idade;
+
+    // Entrada de dados
+    printf(“Digite a idade da pessoa: “);
+    scanf(“%f”, &idade); 
+
+    // Processamento
+    if (idade >= 0.0 && idade <= 0.2) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: recem-nascido\n”); // Correção: aspas fechadas corretamente
+    } 
+    else if (idade >= 0.3 && idade <= 11.0) {
+        printf(“A classificacao e: crianca\n”);
+    } 
+    else if (idade >= 12.0 && idade <= 19.0) { // Correção: adicionado ‘idade’ após o &&
+        printf(“A classificacao e: adolescente\n”);
+    } 
+    else if (idade >= 20.0 && idade <= 55.0) { 
+        printf(“A classificacao e: adulto\n”);
+    } 
+    else if (idade >= 55.0) {
+        printf(“A classificacao e: idoso\n”);
+    } 
+    else {
+        printf(“Idade invalida.\n”);
+    }
+
+    return 0;
+}
+
+14.
+#include <stdio.h>
+int main () {
+//Declaracao das variaveis
+int codigo;
+//Entrada de dados
+    printf(“Digite o codigo do cargo do funcionario: “);
+    scanf(“%d” , &codigo);
+    
+  //Processamento
+switch(codigo){
+case 1:
+       printf(“Cargo Escrituarario:percentual:50,00%.\n”);
+       break;
+case 2: 
+       printf(“Cargo Secretario:percentual:35,00%.\n”); 
+       break;
+case 3:
+       printf(“Cargo Caixa:percentual:20,00%:\n”);
+       break;       
+ case 4:
+       printf(“Cargo Gerente:percentual:10,00.\n”);
+       break;
+case 5:
+       printf(“Cargo Diretor:percentual não tem aumento.\n”);
+       break;
+default:
+       printf(“codigo do cargo invalido.\n”);
+}
+
+  return 0;
+}  
+                              
+15.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+int opcao_desejada;
+float raiz_quadrada,soma,finalizar;
+//Entrada de dados
+    printf("Digite a opcao desejada: ");
+    scanf("%d" , &opcao_desejada);
+//Processamento
+    printf("A opcao desajada de cada operacao:%.d\n", opcao_desejada);
+
+    switch(opcao_desejada){
+    case 1:
+        printf("Soma:\n");
+        break;
+
+    case 2:
+        printf("raiz_quadrada:\n");
+        break;
+
+    case 3:
+        printf("Finalizar:\n");
+        break;
+
+    default:
+        printf("Operacao inavalida:\n");
+    }
+        return 0;
+}
+16.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float idade;
+float grupo_de_risco,b,m,a;
+//Entrada de dados
+    printf("Digite a idade da pessoa: ");
+    scanf("%f" , &idade);
+//Processamento
+    if(idade >= 18.0 && idade <= 24.0) {
+       printf("Maior de idade: b:7,m:8,a:9.%.2f\n", idade);
+    }
+    else if (idade >= 25.0 && idade <= 40.0) {
+       printf("idade:b:7,m:2,a:3.%.2f\n", idade);
+    }
+    else if (idade >= 41.0 && idade <= 70.0) {
+       printf("idade a mais: b1:,m:2,a:3.%.2f\n", idade);
+    }
+    else {
+       printf("O codigo do seguro.\n");
+    }
+
+    return 0;
+}
+                                                                                                                                                                                                                                                                                                                                                           
+17.
+#include<stdio.h>
+int main () {
+//Declaração das variaveis
+float angulo_em_graus;
+//Entrada de dados
+    printf("Digite a medida de um angulo em graus: ");
+    scanf("%f" , &angulo_em_graus);
+//Processamento
+    if(angulo_em_graus >= 0.0 && angulo_em_graus <= 90.0){
+       printf("O 1°quadante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 90.0 && angulo_em_graus <= 180.0){
+       printf("O 2° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 180.0 && angulo_em_graus <= 270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus <= 360.0){
+       printf("O 4° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= 0.0 && angulo_em_graus -90.0){
+       printf("O 1° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -90.0 && angulo_em_graus <= -180.0){
+       printf("O 2º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -180.0 && angulo_em_graus <= -270.0){
+       printf("O 3° quadrante:%.2f\n", angulo_em_graus);
+    }
+    else if(angulo_em_graus >= -0.0 && angulo_em_graus <= -360.0){
+        printf("O 4º quadrante:%.2f\n", angulo_em_graus);
+    }
+    else {
+        printf("Numero inteiro invalido.\n");
+    }
+      return 0;
+}
+
+18.
+#include <stdio.h>
+
+int main() {
+// Processamento
+    H_minutos = (numero_horas_extras * 60.0) – (2.0 / 3.0) * numero_horas_faltas_minutos);
+
+    // Exibe os valores calculados para conferência
+    printf("\nO numero de horas extras em horas: %.2f\n", numero_horas_extras);
+    printf("O numero de horas, numero de horas faltas: %.2f\n", numero_horas_faltas_minutos);
+    printf("O numero de pontos (H_minutos): %.2f\n\n", H_minutos);
+
+    // Condicionais
+    if (H_minutos >= 2400.0) {
+        printf("Premio: 500\n");
+    }
+    else if (H_minutos > 1800.0 && H_minutos < 2400.0) {
+        printf("Premio: 400\n");
+    }
+    else if (H_minutos > 1200.0 && H_minutos <= 1800.0) {
+        printf("Premio: 300\n");
+    }
+    else if (H_minutos >= 600.0 && H_minutos <= 1200.0) {
+        printf("Premio: 200\n");
+    }
+    else {
+        printf("Premio: 100\n");
+    }
+
+    return 0;
+}
+
+
+19.
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float salario_minimo, numero_horas_trabalhadas, dependentes_do_funcionario;
+    float quantidade_horas_extras, salario_do_mes, valor_dependentes;
+    float valor_hora_trabalhada, valor_horas_extras, salario_bruto;
+    float IRRF = 0, salario_liquido;
+
+    // Entrada de dados
+    printf("Digite o salario minimo: ");
+    scanf("%f", &salario_minimo);
+
+    printf("Digite o numero de horas trabalhadas: ");
+    scanf("%f", &numero_horas_trabalhadas);
+
+    printf("Digite a quantidade de dependentes do funcionario: ");
+    scanf("%f", &dependentes_do_funcionario);
+
+    printf("Digite a quantidade de horas extras trabalhadas: ");
+    scanf("%f", &quantidade_horas_extras);
+
+    // Processamento dos valores base
+    valor_hora_trabalhada = salario_minimo / 5.0;
+    salario_do_mes = numero_horas_trabalhadas * valor_hora_trabalhada;
+
+    // Valor por dependente (ex: R$ 32,00 por dependente)
+    valor_dependentes = dependentes_do_funcionario * 32.0;
+
+
+    valor_horas_extras = quantidade_horas_extras * (valor_hora_trabalhada * 1.5);
+
+    // Cálculo do Salário Bruto
+    salario_bruto = salario_do_mes + valor_dependentes + valor_horas_extras;
+
+    // Cálculo do IRRF com base no Salário Bruto
+    if (salario_bruto < 200.0) {
+        printf("\nSalario Bruto inferior a 200.0: R$ %.2f\n", salario_bruto);
+        IRRF = 0.0;
+    }
+    else if (salario_bruto >= 200.0 && salario_bruto <= 500.0) {
+        printf("\nSalario Bruto entre 200.0 e 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.10;
+    }
+    else {
+        printf("\nSalario Bruto superior a 500.0: R$ %.2f\n", salario_bruto);
+        IRRF = salario_bruto * 0.20;
+    }
+
+    // Salário Líquido
+      salario_liquido = salario_bruto - IRRF;
+
+
+    if (salario_liquido <= 350.0) {
+        printf("Gratificacao de 100 reais aplicada.\n");
+        salario_liquido += 100.0;
+    }
+    else {
+        printf("Gratificacao de 50 reais aplicada.\n");
+        salario_liquido += 50.0;
+    }
+
+    // Saída final do programa
+    printf("Salario liquido final: R$ %.2f\n", salario_liquido);
+
+    return 0;
+}
+    
+20.
+#include <stdio.h>
+#include <math.h>
+int main(){
+//Declaração das variaveis
+float a,b,c;
+float delta, x1,x2;
+//Entrada de dados
+    printf("Digite o valor de a: ");
+    scanf("%f" , &a);
+    printf("Digite o valor de b: ");
+    scanf("%f" , &b);
+    printf("Digite o valor de c: ");
+    scanf("%f" , &c);
+//Processamento
+    delta = (b * b) - (4 * a * c);
+    printf("Calcule o delta:%.2f\n", delta);
+
+    if(delta < 0){
+        printf("A equacao nao possui raizes reis.\n");
+    }
+    else if(delta == 0){
+        x1 = -b / (2 * a);
+        printf("Delta zero,raiz unica: x = %.2f\n", x1);
+    }
+    else {
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        printf("Duas raizes reais: x1 = %.2f e x2 = %.2f\n", x1, x2);
+    }
+
+    return 0;
+}
+
+21.
+#include <stdio.h>
+#include <ctype.h> 
+
+Int main() {
+    // Declaracao das variaveis
+    char frase[100];
+    int cont = 0;
+    int i; 
+
+    // Entrada de dados
+    printf(“Digite uma frase: “);
+    fgets(frase, sizeof(frase), stdin); 
+
+    // Processamento (percorre a frase letra por letra)
+    for (i = 0; frase[i] != ‘\0’; i++) {
+        char letra = tolower(frase[i]); 
+
+        // Verifica se o caractere atual e uma vogal
+        if (letra == ‘a’ || letra == ‘e’ || letra == ‘i’ || letra == ‘o’ || letra == ‘u’) {
+            cont++;
+        }
+    }
+
+    // Saida
+    if (cont > 0) {
+        printf(“O numero de vogais e: %d\n”, cont);
+    } else {
+        printf(“Não tem vogais.\n”);
+    }
+
+    return 0;
+}
+
+22.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Declaração das variveis
+char frase [100];
+int cont = 0;
+
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase, sizeof(frase) , stdin);
+//Processamento
+    for(int i = 0; frase[i] != '\0'; i++){
+        char letra = tolower(frase [i]);
+
+    if(letra = ' '){
+        cont++;
+    }
+}
+if(frase[0] != '\n' && frase[0] != '\0'){
+    cont = cont + 1;
+}
+
+//Saida
+    if(cont > 0){
+        printf("O numero de palavras desta frase e:%d\n", cont);
+    }else{
+        printf("Frase invalida.\n");
+    }
+
+    return 0;
+}
+
+
+23.
+#include<stdio.h>
+#include<ctype.h>
+int main () {
+//Decalração das variaveis
+int cont = 0;
+int i;
+char frase[100];
+char palavra;
+//Entrada de dados
+    printf("Digite uma frase: ");
+    fgets(frase,sizeof(frase),stdin);
+//Processamento
+    for(i = 0; frase[i] != '\0'; i++){
+        palavra = tolower(frase[i]);
+
+        if(palavra == 'a'){
+        cont ++
+    }
+}
+//Saida
+    if(cont > 0){
+        printf("Quantidade de vezes da palavra aula e:%d\n", cont);
+    }else{
+        printf("Nao tem a palavra desejada:\n");
+    }
+
+    return 0;
+}
+
+24.
+#include <stdio.h>
+int main (){
+//Declaração das variaveis
+int inteiro_1,inteiro_2,inteiros_3;
+int ordem_c;
+//Entrada de dados
+    printf("Digite os tres valores inteiros: ");
+    scanf("%d %d %d" , &inteiro_1,&inteiro_2,&inteiros_3);
+
+//processamento
+    if(inteiro_1 > inteiro_2){
+        ordem_c = inteiro_1;
+        inteiro_1 = inteiro_2;
+        inteiro_2 = ordem_c;
+    }
+    if(inteiro_1 > inteiros_3){
+        ordem_c = inteiro_1;
+        inteiro_1= inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+    if(inteiro_2 > inteiros_3){
+        ordem_c = inteiro_2;
+        inteiro_2 = inteiros_3;
+        inteiros_3 = ordem_c;
+    }
+
+    //Saida
+    printf("O inteiro do menor para o maior:%d,%d,%d\n", inteiro_1,inteiro_2,inteiros_3);
+    return 0;
+}
+
+25.
+#include<stdio.h>
+int main() {
+//Declaração das variaveis
+int codigo;
+int condicao_de_pagamento;
+//Entrada de dados
+    printf("Digite o codigo do pagamento do produto: ");
+    scanf("%d" , &codigo);
+//Processamento
+    printf("A condicao de pagamento do produto: ");
+
+switch(codigo){
+    case 1:
+            printf("A vista em dinheiro ou cheque,recebe 10% de desconto.\n");
+            break;
+    case 2:
+            printf("A vista no cartao de credito,recebe 5% de desconto.\n");
+            break;
+    case 3:
+            printf("Em 2 vezes,preco normal de etiqueta sem juros.\n");
+            break;
+    case 4:
+            printf("Em 3 vezes,preco normal de etiqueta mais juros de 10%.\n");
+            break;
+    default:
+            printf("Codigo do produto invalido.\n");
+    }
+
+
+return 0;
+}
+
+26.
+#include <stdio.h>
+
+int main(){
+    //Declaração de variáveis
+    int num1, num2;
+    char operador;
+    int resultado;
+   
+    //Entrada de dados
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o operador (+, -, *, /): ");
+    scanf(" %c", &operador);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+
+    //processamento
+    printf("\n%d %c %d = ", num1, operador, num2);
+    switch(operador){
+        case '+':
+            resultado = num1 + num2;
+            break;
+        case '-':
+            resultado = num1 - num2;
+            break;
+        case '*':
+            resultado = num1 * num2;
+            break;
+        case '/':
+            resultado = num1 / num2;
+            break;
+        default:
+            printf("Operador inválido!\n");
+            return 1;
+    }
+    printf("%d\n", resultado);
+
+    return 0;
+}
+
+27.
+#include <stdio.h>
+
+int main(){
+//Declaração de variáveis
+int num;
+//Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &num);
+//Processamento
+  
+    if(num > 0){
+        printf("Positivo.\n");
+    }
+    else{
+        
+       if (num < 0){
+        printf("negativo.\n");
+       }
+       else{
+            printf("Zero.\n");
+       }
+    }
+            printf("O numero e:%d\n", num);
+    
+
+            return 0;
+    }
+
+28.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int a,b,c;
+//Entrada de dados
+    printf("Entre com os valores dos lados do triangulo:\n");
+    printf("Lado a: ");
+    scanf("%d" , &a);
+    printf("Lado de b: ");
+    scanf("%d" , &b);
+    printf("Lado c: ");
+    scanf("%d" , &c);
+//Processamento
+//Verificar os lados
+    if ((a < b + c) && (b < a + c) && (c < a + b)) {
+
+//verificar o tipo de triangulo
+    if ((a == b) && (b == c)) {
+        printf("Triangulo Equilatero.\n");
+    }
+
+    else if ((a == b) || (a == c) || (b == c)) {
+        printf("Triangulo Isosceles.\n");
+
+    }
+     else {
+        printf("Triangulo Escaleno.\n");
+    }
+}
+ else {
+    printf("Os valores informados nao formam um triangulo.\n");
+ }
+    
+//Saida
+    printf("O valor do triangulo e: %d %d %d\n",  a,b,c);
+
+    return 0;
+}
+
+29.
+#include<stdio.h>
+int main (){
+//Declaração das variveis
+int num;
+//Entrada de dados
+for(int i = 1; i <= 4; i++){
+        printf("Digite o %d numero: ", i);
+        scanf("%d", &num);
+//Processamento
+    if(num % 2 == 0 && num % 3 == 0){
+        printf("O numero %d e divisivel por 2 e por 3 ao mesmo tempo.\n", num);
+    }
+    
+    else if (num % 2 == 0) {
+            printf("O numero %d e divisivel por 2.\n", num);
+    }
+    else if (num % 3 == 0){
+            printf("O numero %d e divisivel por 3.\n", num);
+    }
+    else {
+            printf("O numero %d nao e divisivel por nenhum dos dois.\n", num);
+        
+       }
+    }
+    
+     return 0;
+}
+
+30.
+#include <stdio.h>
+
+Int main() {
+    int resposta;
+
+    Printf(“Pense em um dos seguintes animais:\n”);
+    Printf(“leao, cavalo, homem, macaco, morcego, baleia, avestruz, pinguim, pato,      aguia, tartaruga, crocodilo, cobra.\n\n”);
+    Printf(“Responda com 1 para SIM ou 0 para NÃO.\n\n”);
+
+    // 1. Nível Principal: Classe do Animal
+    Printf(“E mamifero? (1-Sim / 0-Não): “);
+    Scanf(“%d”, &resposta);
+
+    if (resposta == 1) {
+        // Subclasse: Mamíferos
+        Printf(“E quadrupede? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        if (resposta == 1) {
+            Printf(“E carnivoro? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+            if (resposta == 1) {
+                Printf(“\nEntao o animal escolhido foi o LEAO.\n”);
+            } else {
+                Printf(“\nEntao o animal escolhido foi o CAVALO.\n”);
+            }
+        } else {
+            // Não quadrúpede (Bípede, Voador ou Aquático)
+            Printf(“E bipede? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            if (resposta == 1) {
+                Printf(“E onivoro? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                if (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o HOMEM.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o MACACO.\n”);
+                }
+            } else {
+                Printf(“E voador? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                if (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o MORCEGO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a BALEIA.\n”);
+                }
+            }
+        }
+    } else {
+        // Não é mamífero. Próxima classe: Aves?
+        Printf(“E uma ave? (1-Sim / 0-Não): “);
+        Scanf(“%d”, &resposta);
+
+        if (resposta == 1) {
+            // Subclasse: Aves
+            Printf(“E não-voadora? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            if (resposta == 1) {
+                Printf(“E tropical? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                if (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o AVESTRUZ.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi o PINGUIM.\n”);
+                }
+            } else {
+                Printf(“E nadadora? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+                if (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi o PATO.\n”);
+                } else {
+                    Printf(“\nEntao o animal escolhido foi a AGUIA.\n”);
+                }
+            }
+        } else {
+            // Não é mamífero nem ave. Próxima classe: Répteis
+            Printf(“E um reptil? (1-Sim / 0-Não): “);
+            Scanf(“%d”, &resposta);
+
+            if (resposta == 1) {
+                // Subclasse: Répteis
+                Printf(“Tem casco? (1-Sim / 0-Não): “);
+                Scanf(“%d”, &resposta);
+
+                if (resposta == 1) {
+                    Printf(“\nEntao o animal escolhido foi a TARTARUGA.\n”);
+                } else {
+                    Printf(“E carnivoro? (1-Sim / 0-Não): “);
+                    Scanf(“%d”, &resposta);
+                    if (resposta == 1) {
+                        Printf(“\nEntao o animal escolhido foi o CROCODILO.\n”);
+                    } else {
+                        Printf(“\nEntao o animal escolhido foi a COBRA.\n”);
+                    }
+                }
+            } else {
+                Printf(“\nAnimal não identificado nas categorias fornecidas.\n”);
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+    float nota1, nota2, nota3, media_final;
+    int conceito;
+    //Entrada de dados
+
+
