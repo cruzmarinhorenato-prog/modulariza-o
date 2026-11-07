@@ -1,0 +1,1575 @@
+
+
+1.
+#include <stdio.h>
+//Declaração de variáveis globais
+double volume;
+double pi = 3.14159265359;
+double raio;
+//Protótipo das funçoes
+double volumeEsfera();
+
+int main () {
+    //Entrada de dados
+    printf("Digite o raio da esfera: ");
+    scanf("%lf" , &raio);
+
+    //Chamar a funcao
+    volume = volumeEsfera();
+
+    //Exibir o resultado
+    printf("O volume da esfera e: %lf\n", volume);
+    scanf("%lf" , &volume);
+
+    return 0;
+}
+
+double volumeEsfera(){
+    volume = (4.0 / 3.0 ) * pi * raio * raio * raio;
+
+    return volume;
+}
+
+2.
+#include <stdio.h>
+
+//prototipo da funcao
+double fahrenheitToCelsius(double f);
+
+//função principal
+int main(){
+    double fahrenheit, ceusius = 0;
+
+    printf("Digite a temperatura em Fahrenheit: ");
+    scanf("%lf", &fahrenheit);
+
+    ceusius = fahrenheitToCelsius(fahrenheit);
+    printf("A temperatura em Celsius é: %.2lf\n", ceusius);
+
+    return 0;
+}
+
+double fahrenheitToCelsius(double f){
+    return (f - 32) * 5 / 9;
+}
+
+3.
+#include <stdio.h>
+#include <windows.h>
+
+//protótipo da função
+void contagemRegressiva(int inicio, int segundos);
+
+int main  (){
+    int numero, intervalo;
+
+    printf("Digite o numero inicial da contagem regressiva: ");
+    scanf("%d", &numero);
+
+    printf("Digite o intervalor entre cada contagem (em segundos): ");
+    scanf("%d", &intervalo);
+
+    contagemRegressiva(numero, intervalo);
+
+    return 0;
+}
+
+void contagemRegressiva(int inicio, int segundos){
+    int i;
+    for(i = inicio; i >= 0; i--){
+        printf("%d\n",i);
+        fflush(stdout); //garante que a saída seja exibida imediatamente
+        if(i > 0)   //evita eserar depois de 0    
+        Sleep(segundos * 1000); //pausa a execução por 'segundos'
+    }
+    printf("Fim\n");
+}
+
+4.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//prototipo da funcao
+void aleatorio(int quantidade, int limite);
+
+int main() {
+    int quantidade, faixa;
+
+    printf("Digite a quantidade de numeros a sortear: ");
+    scanf("%d", &quantidade);
+
+    printf("Digite a faixa de mumeros validos(1 ate N) ");
+    scanf("%d", &faixa);
+
+    aleatorio(quantidade, faixa);
+
+    return 0;
+}
+
+void aleatorio(int quantidade, int limite) {
+    int i, numero;
+
+    //inicializa o gerador de numeros aleatorios com o tempo atual
+    //faz com que os numeros mudem a cada execução
+    srand(unsined)time(NULL));
+
+    printf("\nNumeros sorteadors entre 1 e %d:\m". limite);
+
+    for(i = 0; i < quantidade; i++){
+        numero = rand() % limite + 1;
+        printf("%d\n", numero);
+    }
+}
+5.
+#include <stdio.h>
+
+// Declaração de variáveis globais e configurações
+int V[100] = {10, 20, -30, 40}; // Adicionado um número negativo para testar as funções
+int tamanho = 4;
+
+// Protótipos das funções
+void mostrarVetor();
+float calcularSoma();
+float calcularMedia();
+int contarZerosENegativos();
+int contarMaioresQueZero();
+void MenuAnterior();
+
+int main() {
+    int opcao;
+
+    // Menu interativo usando o loop do-while dentro da main
+    do {
+        MenuAnterior();
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                mostrarVetor();
+                break;
+
+            case 2:
+                printf("A soma do vetor e: %.2f\n", calcularSoma());
+                break;
+
+            case 3:
+                printf("A media do vetor e: %.2f\n", calcularMedia());
+                break;
+            
+            case 4:
+                printf("Quantidade de zeros e negativos: %d\n", contarZerosENegativos());
+
+            
+            case 0:
+                printf("Saindo do programa...\n");
+                break;
+
+           default:
+                printf("Opcao invalida.\n");
+                break;
+        }
+        printf("\n"); // Apenas pula uma linha para organizar o menu
+    } while (opcao != 0);
+
+    return 0;
+}
+
+// Imprime as opções do menu na tela
+void MenuAnterior() {
+    printf("--- MENU DE OPCOES ---\n");
+    printf("1 - Ver valores do vetor\n");
+    printf("2 - Ver soma do vetor\n");
+    printf("3 - Ver media do vetor\n");
+    printf("4 - Ver zeros e negativos do vetor\n");
+    printf("5 - Ver maiores que zero do vetor\n");
+    printf("0 - Sair\n");
+}
+
+// Mostra os elementos atuais dentro do vetor
+void mostrarVetor() {
+    printf("Valores do vetor: ");
+    for(int i = 0; i < tamanho; i++) {
+        printf("[%d] ", V[i]);
+    }
+    printf("\n");
+}
+
+// Somatório dos números
+float calcularSoma() {
+    float soma = 0;
+    for(int i = 0; i < tamanho; i++) {
+        soma += V[i];
+    }
+    return soma;
+}
+
+// Média dos valores
+float calcularMedia() {
+    float soma = calcularSoma();
+    return soma / tamanho;
+}
+
+// Verificação de zeros e negativos (retorna a quantidade encontrada)
+int contarZerosENegativos() {
+    int contador = 0;
+    for(int i = 0; i < tamanho; i++) {
+        if (V[i] <= 0) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+// Verificação de valores maiores que zero (retorna a quantidade encontrada)
+int contarMaioresQueZero() {
+    int contador = 0;
+    for(int i = 0; i < tamanho; i++) {
+            case 5:
+                printf("Quantidade de maiores que zero: %d\n", contarMaioresQueZero());
+                break;
+        if (V[i] > 0) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+
+6.
+#include<stdio.h>
+//Declaração das variaveis globais
+
+int num1,num2;
+
+//Protipos das funções
+void DivisivelporOutro();
+
+int main () {
+    //Entrada de dados
+    printf("Digite o primeiro numero: ");
+    scanf("%d" , &num1);
+    printf("Digite o segundo numero: ");
+    scanf("%d" , &num2);
+
+    //Chamar a função
+    DivisivelporOutro();
+
+    return 0;
+}
+
+    //Verificação dos numeros
+void DivisivelporOutro() {
+    if(num2 != 0 && num1 % num2 == 0) {
+        printf("O primeiro numero e divisivel pelo segundo.\n");
+    }
+    else if(num1 != 0 && num2 % num1 == 0) {
+        printf("O Segundo numero e divisivel pelo primeiro.\n");
+    }
+    else {
+        printf("O numero não e divisivel por outro.\n");
+    }
+    
+    printf("Os numeros digitados formam:%d e %d\n", num1,num2);
+}
+
+7.
+#include<stdio.h>
+#include<math.h>
+//prototipo das funções
+void arredondamento(float num_r);
+
+int main () {
+    float num_r;
+
+    //Entrada de dados
+    printf("Digite o numero real: ");
+    scanf("%f", &num_r);
+
+    //Chamar a função
+void arredondamento(float num_r);
+
+    return 0;
+}
+    //areendondamento dos numeros
+void arrendondamento(float num_r) {
+    int num_r_arredondado;
+    float parte_decimal;
+
+    parte_decimal = fabs(num_r - (int)num_r);
+
+    if(parte_decimal >= 0.5) {
+        num_r_arredondado = (num_r >= 0) ? (int)num_r + 1 : (int)num_r - 1;
+        printf("Arredodamento para cima.\n");
+    } else {
+        num_r_arredondado = (int)num_r;
+        printf("Arredodamento para baixo.\n");
+    }
+    //Exibe  resultados
+    printf("Os Numeros arredondado e: %d\n", num_r_arredondado);
+
+}
+
+8.
+#include <stdio.h>
+#include <string.h>
+
+// --- FUNÇÃO 1: Resolve um bloco de 3 dígitos (centena, dezena e unidade) ---
+Void escrever_trio(int numero, char* buffer) {
+    Char* unidades[] = {“”, “um”, “dois”, “três”, “quatro”, “cinco”, “seis”, “sete”, “oito”, “nove”};
+    Char* especiais[] = {“dez”, “onze”, “doze”, “treze”, “quatorze”, “quinze”, “dezesseis”, “dezessete”, “dezoito”, “dezenove”};
+    Char* dezenas[] = {“”, “”, “vinte”, “trinta”, “quarenta”, “cinquenta”, “sessenta”, “setenta”, “oitenta”, “noventa”};
+    Char* centenas[] = {“”, “cento”, “duzentos”, “trezentos”, “quatrocentos”, “quinhentos”, “seiscentos”, “setecentos”, “oitocentos”, “novecentos”};
+
+    If (numero == 100) {
+        Strcat(buffer, “cem”);
+        Return;
+    }
+
+    Int c = numero / 100;
+    Int resto = numero % 100;
+    Int d = resto / 10;
+    Int u = resto % 10;
+
+    If (c > 0) {
+        Strcat(buffer, centenas[c]);
+        If (resto > 0) strcat(buffer, “ e “);
+    }
+
+    If (resto > 0) {
+        If (resto < 10) {
+            Strcat(buffer, unidades[u]);
+        } else if (resto >= 10 && resto <= 19) {
+            Strcat(buffer, especiais[resto – 10]);
+        } else {
+            Strcat(buffer, dezenas[d]);
+            If (u > 0) {
+                Strcat(buffer, “ e “);
+                Strcat(buffer, unidades[u]);
+            }
+        }
+    }
+}
+
+// --- FUNÇÃO 2: Decide a pontuação correta (“ e “ ou “, “) entre os blocos ---
+Void adicionar_conector(long long int resto, char* buffer) {
+    If (resto > 0) {
+        // Regra do português: se o que sobrar for menor que 100 ou uma centena exata (ex: 300), usa “ e “
+        If (resto < 100 || resto % 100 == 0) {
+            Strcat(buffer, “ e “);
+        } else {
+            Strcat(buffer, “, “);
+        }
+    }
+}
+
+// --- FUNÇÃO 3: Controla a lógica dos 10 dígitos (Bilhões, Milhões, Milhares) ---
+Void numero_por_extenso(long long int numero) {
+    If (numero == 0) {
+        Printf(“zero\n”);
+        Return;
+    }
+
+    // Buffer de 500 caracteres garante espaço suficiente para o texto extenso por completo
+    Char resultado[500] = “”; 
+
+    // Extrai cada pedaço de 3 dígitos do número de 10 dígitos
+    Int bilhoes  = (numero / 1000000000LL) % 1000;
+    Int milhoes  = (numero / 1000000LL) % 1000;
+    Int milhares = (numero / 1000LL) % 1000;
+    Int unidades = numero % 1000;
+
+    // Processa os Bilhões
+    If (bilhoes > 0) {
+        Escrever_trio(bilhoes, resultado);
+        If (bilhoes == 1) strcat(resultado, “ bilhão”);
+        Else strcat(resultado, “ bilhões”);
+        
+        Adicionar_conector(numero % 1000000000LL, resultado);
+    }
+
+    // Processa os Milhões
+    If (milhoes > 0) {
+        Escrever_trio(milhoes, resultado);
+        If (milhoes == 1) strcat(resultado, “ milhão”);
+        Else strcat(resultado, “ milhões”);
+        
+        Adicionar_conector(numero % 1000000LL, resultado);
+    }
+
+    // Processa os Milhares
+    If (milhares > 0) {
+        // Regra gramatical: omite-se “um” antes de mil isolado (ex: “mil”, não “um mil”)
+        If (milhares == 1) {
+            Strcat(resultado, “mil”);
+        } else {
+            Escrever_trio(milhares, resultado);
+            Strcat(resultado, “ mil”);
+        }
+        
+        Adicionar_conector(numero % 1000LL, resultado);
+    }
+
+    // Processa as Unidades simples
+    If (unidades > 0) {
+        Escrever_trio(unidades, resultado);
+    }
+
+    // Exibe o texto completo acumulado no buffer
+    Printf(“%s\n”, resultado);
+}
+
+// --- FUNÇÃO PRINCIPAL: Ponto de entrada do programa ---
+Int main() {
+    Long long int num;
+
+    Printf(“Digite um número inteiro (até 10 dígitos): “);
+    If (scanf(“%lld”, &num) != 1) {
+        Printf(“Erro: Entrada inválida.\n”);
+        Return 1;
+    }
+
+    // Validação de limite para 10 dígitos (máximo: 9.999.999.999)
+    If (num < 0 || num > 9999999999LL) {
+        Printf(“Erro: O número deve estar entre 0 e 9.999.999.999.\n”);
+    } else {
+        Printf(“Por extenso: “);
+        Numero_por_extenso(num);
+    }
+
+    Return 0;
+}
+
+
+
+9.
+#include<stdio.h>
+#include<stdlib.h>
+//prototipo das funções
+int diviselporOutro(int a , int b) {
+    if(b == 0) {
+        return 0;
+    } else {
+        return (a / b) * b == a;
+
+    }
+}
+
+//Funcão principal
+int main () {
+    int num1 = 10;
+    int num2 = 3;
+
+    if(diviselporOutro(num1 , num2)) {
+        printf("%d e divisel por %d\n", num1 , num2);
+    
+    } else {
+        printf("%d nao e divisel %d\n", num1 , num2);
+
+    }
+
+    return 0;
+}
+
+10.
+#include<stdio.h>
+//Protipos da função
+int mdc(int a , int b) {
+    int resto;
+    while(b!=0) {
+        resto = a % b;
+        a = b;
+        b = resto;
+    }
+    return a;
+}
+
+//Função principal
+int main () {
+    int a = 24;
+    int b = 9;
+    int resto = a % b;
+    int quociente = a / b;
+//Processamento
+    a = b * quociente + resto;
+
+//Chamar a função 
+
+    if(resto == 0) {
+        printf("Resto igual a zero.\n");
+     
+    }
+    
+    else {
+       printf("Resto diferente de zero.\n");
+    
+    }
+
+//Saida
+    printf("O mdc dos dois numeros e: %d\n", mdc(a , b));
+
+    return 0;
+}
+
+11.
+#include <stdio.h>
+
+/* Leitura da especie */
+int lerEspecie() {
+    int especie;
+
+    printf("\nEspecie:\n");
+    printf("1 - Bovino\n");
+    printf("2 - Ovino\n");
+    printf("3 - Caprino\n");
+    printf("Digite a opcao: ");
+    scanf("%d", &especie);
+
+    return especie;
+}
+
+/* Leitura do sexo */
+int lerSexo() {
+    int sexo;
+
+    printf("\nSexo:\n");
+    printf("1 - Feminino\n");
+    printf("2 - Masculino\n");
+    printf("Digite a opcao: ");
+    scanf("%d", &sexo);
+
+    return sexo;
+}
+
+/* Leitura do peso */
+float lerPeso() {
+    float peso;
+
+    printf("Digite o peso: ");
+    scanf("%f", &peso);
+
+    return peso;
+}
+
+/* Calcula a media */
+float calcularMedia(float soma, int quantidade) {
+    if (quantidade == 0)
+        return 0;
+
+    return soma / quantidade;
+}
+
+/* Mostra uma media */
+void mostrarMedia(char especie[], char sexo[],
+                  float soma, int quantidade) {
+
+    if (quantidade > 0) {
+        printf("%s - %s: %.2f kg\n",
+               especie,
+               sexo,
+               calcularMedia(soma, quantidade));
+    }
+    else {
+        printf("%s - %s: nenhum animal cadastrado.\n",
+               especie,
+               sexo);
+    }
+}
+
+/* Mostra todos os resultados */
+void mostrarResultados(float somaBovinoF, int contBovinoF,
+                       float somaBovinoM, int contBovinoM,
+                       float somaOvinoF, int contOvinoF,
+                       float somaOvinoM, int contOvinoM,
+                       float somaCaprinoF, int contCaprinoF,
+                       float somaCaprinoM, int contCaprinoM) {
+
+    printf("\n========== RESULTADOS ==========\n");
+
+    mostrarMedia("Bovinos", "Femeas",
+                 somaBovinoF, contBovinoF);
+
+    mostrarMedia("Bovinos", "Machos",
+                 somaBovinoM, contBovinoM);
+
+    mostrarMedia("Ovinos", "Femeas",
+                 somaOvinoF, contOvinoF);
+
+    mostrarMedia("Ovinos", "Machos",
+                 somaOvinoM, contOvinoM);
+
+    mostrarMedia("Caprinos", "Femeas",
+                 somaCaprinoF, contCaprinoF);
+
+    mostrarMedia("Caprinos", "Machos",
+                 somaCaprinoM, contCaprinoM);
+}
+
+/* Processa os animais */
+void processarAnimais(int quantidade) {
+
+    int especie, sexo;
+    float peso;
+
+    float somaBovinoF, somaBovinoM;
+    float somaOvinoF, somaOvinoM;
+    float somaCaprinoF, somaCaprinoM;
+
+    int contBovinoF, contBovinoM;
+    int contOvinoF, contOvinoM;
+    int contCaprinoF, contCaprinoM;
+
+    /* Inicializacao usando atribuicao em conjunto */
+    somaBovinoF = somaBovinoM = 0;
+    somaOvinoF = somaOvinoM = 0;
+    somaCaprinoF = somaCaprinoM = 0;
+
+    contBovinoF = contBovinoM = 0;
+    contOvinoF = contOvinoM = 0;
+    contCaprinoF = contCaprinoM = 0;
+
+    for (int i = 0; i < quantidade; i++) {
+
+        printf("\n===== ANIMAL %d =====\n", i + 1);
+
+        especie = lerEspecie();
+        sexo = lerSexo();
+        peso = lerPeso();
+
+        if (especie == 1 && sexo == 1) {
+            somaBovinoF += peso;
+            contBovinoF++;
+        }
+        else if (especie == 1 && sexo == 2) {
+            somaBovinoM += peso;
+            contBovinoM++;
+        }
+        else if (especie == 2 && sexo == 1) {
+            somaOvinoF += peso;
+            contOvinoF++;
+        }
+        else if (especie == 2 && sexo == 2) {
+            somaOvinoM += peso;
+            contOvinoM++;
+        }
+        else if (especie == 3 && sexo == 1) {
+            somaCaprinoF += peso;
+            contCaprinoF++;
+        }
+        else if (especie == 3 && sexo == 2) {
+            somaCaprinoM += peso;
+            contCaprinoM++;
+        }
+        else {
+            printf("Dados invalidos!\n");
+        }
+    }
+
+    mostrarResultados(
+        somaBovinoF, contBovinoF,
+        somaBovinoM, contBovinoM,
+        somaOvinoF, contOvinoF,
+        somaOvinoM, contOvinoM,
+        somaCaprinoF, contCaprinoF,
+        somaCaprinoM, contCaprinoM
+    );
+}
+
+/* Programa principal */
+int main() {
+
+    int quantidade;
+
+    printf("=================================\n");
+    printf("   CALCULO DE PESO DOS ANIMAIS\n");
+    printf("=================================\n");
+
+    printf("Digite a quantidade de animais: ");
+    scanf("%d", &quantidade);
+
+    if (quantidade <= 0) {
+        printf("Quantidade invalida!\n");
+        return 1;
+    }
+
+    processarAnimais(quantidade);
+
+    return 0;
+}
+
+12
+#include<stdio.h>
+#include<time.h>
+
+//Protipo de funções
+void escreverDataAbreviada(int dia ,int mes , int ano) {
+    struct tm t = {0};
+    t.tm_mday = dia;
+    t.tm_mon = mes - 1;
+    t.tm_year = ano - 2007;
+
+    char buffer[80];
+
+    strftime(buffer, sizeof(buffer), "%d%m%y", &t);
+
+    printf("Data abreviada: %s\n", buffer);
+
+}
+
+//Função principal
+int main () {
+    escreverDataAbreviada(9, 10, 2026);
+    return 0;
+}
+
+13.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
+
+// Protótipos das funções
+Void aleatorio(int quantidade, int limite);
+Void sorteioAutomatico(int num_mais_vezes, int num_menos_vezes, int num_maior, int num_menor);
+
+Int main() {
+    Int quantidade, faixa;
+    
+    Printf(“Digite a quantidade de numeros a sortear: “);
+    Scanf(“%d”, &quantidade);
+    
+    Printf(“Digite a faixa de numeros validos (1 ate 100): “);
+    Scanf(“%d”, &faixa);
+    
+    If (quantidade <= 0) {
+        Printf(“\n[ERRO] A quantidade de numeros deve ser maior que 0!\n”);
+    } 
+    Else if (faixa < 1 || faixa > 100) {
+        Printf(“\n[ERRO] A faixa de numeros deve estar estritamente entre 1 e 100!\n”);
+    } 
+    Else {
+        Aleatorio(quantidade, faixa);
+    }
+    
+    Return 0;
+}
+
+Void aleatorio(int quantidade, int limite) {
+    Int i;
+    Int numero;
+    
+    // Vetor para contar quantas vezes cada número (de 1 até limite) apareceu
+    // Inicializa todas as posições com 0
+    Int frequencia[101] = {0}; 
+    
+    Int maior = -1;
+    Int menor = limite + 1;
+    
+    // Semente para o gerador de números aleatórios (chamar apenas uma vez)
+    Srand((unsigned)time(NULL));
+    
+    Printf(“\n--- Numeros Sorteados entre 1 e %d ---\n”, limite);
+    For(i = 0; i < quantidade; i++) {
+        Numero = (rand() % limite) + 1;
+        Printf(“%d\n”, numero);
+        
+        // Contabiliza a frequência do número sorteado
+        Frequencia[numero]++;
+        
+        // Verifica maior e menor
+        If (numero > maior) {
+            Maior = numero;
+        }
+        If (numero < menor) {
+            Menor = numero;
+        }
+    }
+    
+    // Encontrar o número que saiu mais vezes e o que saiu menos vezes
+    Int max_vezes = -1;
+    Int min_vezes = quantidade + 1;
+    Int num_mais_vezes = -1;
+    Int num_menos_vezes = -1;
+    
+    For (i = 1; i <= limite; i++) {
+        // Verifica se o número chegou a ser sorteado (frequencia[i] > 0)
+        If (frequencia[i] > 0) {
+            If (frequencia[i] > max_vezes) {
+                Max_vezes = frequencia[i];
+                Num_mais_vezes = i;
+            }
+            If (frequencia[i] < min_vezes) {
+                Min_vezes = frequencia[i];
+                Num_menos_vezes = i;
+            }
+        }
+    }
+    
+    // Chama a função para exibir as estatísticas
+    sorteioAutomatico(num_mais_vezes, num_menos_vezes, maior, menor);
+}
+
+Void sorteioAutomatico(int num_mais_vezes, int num_menos_vezes, int num_maior, int num_menor) {
+    Printf(“\n=== Estatisticas do Sorteio ===\n”);
+    Printf(“O numero que saiu mais vezes: %d\n”, num_mais_vezes);
+    Printf(“O numero que saiu menos vezes: %d\n”, num_menos_vezes);
+    Printf(“O maior numero sorteado: %d\n”, num_maior);
+    Printf(“O menor numero sorteado: %d\n”, num_menor);
+}
+
+
+14.
+#include <stdio.h>
+//Protipos das funçãoes 
+float somatorioNumeros(int n);
+
+//função e calcular
+float somatorioNumeros(int n) {
+    float somatorio = 0;
+
+//Aplica o calculo da somatorio    
+    somatorio = (float)n * (n + 1) / 2;
+
+    return somatorio;
+
+}
+
+//Função principal
+int main () {
+    int valor_n = 0;
+    float resultado = 0;
+    
+//Entrada de dados
+    printf("Digite  o valor de n: ");
+    scanf("%d" , &valor_n);
+
+//Chamar a função
+    resultado = somatorioNumeros(valor_n);
+
+//Saida
+    printf("O somatorio dos primeiros numeros e: %.2f\n", resultado);
+
+    return 0;
+}
+
+15.
+#include <stdio.h>
+#include <time.h>
+
+// Função que calcula a diferença em horas entre duas datas
+Double diferenca_em_horas(struct tm data1, struct tm data2) {
+    // Converte as estruturas ‘tm’ para segundos (time_t) desde a época padrão
+    Time_t tempo1 = mktime(&data1);
+    Time_t tempo2 = mktime(&data2);
+
+    // Calcula a diferença em segundos
+    Double segundos = difftime(tempo2, tempo1);
+
+    // Converte segundos para horas (1 hora = 3600 segundos)
+    Return segundos / 3600.0;
+}
+
+Int main() {
+    // Define a primeira data: 12 de Outubro de 2026 às 08:00:00
+    Struct tm inicio = {0};
+    Inicio.tm_year = 2026 – 1900; // Anos desde 1900
+    Inicio.tm_mon = 10 – 1;       // Meses de 0 a 11
+    Inicio.tm_mday = 12;          // Dia do mês
+    Inicio.tm_hour = 8;           // Hora
+    Inicio.tm_min = 0;            // Minuto
+    Inicio.tm_sec = 0;            // Segundo
+
+    // Define a segunda data: 14 de Outubro de 2026 às 14:30:00
+    Struct tm fim = {0};
+    Fim.tm_year = 2026 – 1900;
+    Fim.tm_mon = 10 – 1;
+    Fim.tm_mday = 14;
+    Fim.tm_hour = 14;
+    Fim.tm_min = 30;
+    Fim.tm_sec = 0;
+
+    // Chama a função e exibe o resultado
+    Double horas = diferenca_em_horas(inicio, fim);
+    Printf(“A diferenca e de %.2f horas.\n”, horas);
+
+    Return 0;
+}
+
+
+16.
+#include <stdio.h>
+//Protipo da função
+int nao_e_primo(int num) {
+    if(num <= 1)
+    return 1;
+
+    
+    for (int  d = 2; d * d <= num; d++) {
+        if(num % d == 0) {
+            return 1;
+    }
+}
+    return 0;
+}
+
+
+//Função principal
+int main () {
+    int n;
+    printf("Digite um numero inteiro: ");
+    scanf("%d" , &n);
+
+    //Chamar a funçaõ
+    if(nao_e_primo(n)) {
+        printf("O numero %d nao e primo.\n", n);
+    } else {
+        printf("O numero %d e primo.\n", n);
+
+    }
+    return 0;
+}
+
+17.
+#include <stdio.h>
+//Protipo da função
+float somatorio_n_Primos(int n) {
+float somatorio = 0;
+
+    //calculo
+    somatorio =(float) n * n - (n) / 2;
+    return somatorio;
+}
+
+//Função principal
+int main () {
+    int valor_n;
+    float resultado = 0;
+
+    //Entrada de dados
+    printf("Digite o valor de n elementos: ");
+    scanf("%d" , &valor_n);
+
+    //chamar a função
+    resultado = somatorio_n_Primos (valor_n);
+
+    //saida
+    printf("A Somatorio de todos  os numeros primos e: %.2f\n", resultado);
+
+    return 0;
+}
+
+18.
+#include <stdio.h>
+//Protipo das funçoes
+float somatorioFibonnacci(int n) {
+    int t1 = 1, t2 = 1, proximo;
+    
+    printf("Os %d primeiros termos da sequencia de Fibonacci sao: \n", n);
+
+    for(int i = 1; i <= n; i++) {
+        if(i == 1) {
+            printf("%d" , t1);
+        }else if (i == 2) {
+            printf("%d" , t2);
+        }else{
+            proximo = t1 + t2;
+            t1 = t2;
+            t2 = proximo;
+            printf("%d" , proximo);
+        }
+    }
+    printf("\n");
+}
+
+//Função principal
+int main() {
+    int n;
+
+    //Entrada de dados
+    printf("Digite a quantidade de termos (n): ");
+    scanf("%d" , &n);
+
+    //Chamar a função
+    somatorioFibonnacci(n);
+
+    return 0;
+}
+
+19.
+#include<stdio.h>
+//Protipo dsa funções
+float somarquatronumeros(float n1, float n2, float n3, float n4) {
+    return n1 + n2 + n3 + n4;
+}
+        
+//Função principal
+int main () {
+    //Declaração das variaveis
+    float notas [4];
+    float soma = 0;
+    float media = 0;
+    int i;
+
+    //Lendo as notas
+    for(i = 0; i < 4; i++) {
+        printf("Digite a nota %d: ", i + 1);
+        scanf("%f" , &notas[i]);
+    }
+        //chamar a função
+        soma = somarquatronumeros(notas[0],notas[1],notas[2],notas[3]);
+        
+        //calculo a media
+        media = soma / 4;
+        printf("A media final e:%.2f\n", media);
+
+        return 0;
+}
+
+20.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+Int main() {
+    Float saldo = 100.0; // Saldo inicial do jogador
+    Float aposta;
+    Int palpite, dado;
+
+    // Inicializa o gerador de números aleatórios com base no tempo atual
+    Srand(time(NULL));
+
+    Printf(“=== BEM-VINDO AO PROGRAMA DE APOSTAS EM C ===\n”);
+    Printf(“Você começa com um saldo de: R$ %.2f\n\n”, saldo);
+
+    // Loop do jogo (continua enquanto o jogador tiver dinheiro)
+    While (saldo > 0) {
+        Printf(“Quanto você deseja apostar? (Saldo atual: R$ %.2f) ou digite 0 para sair: “, saldo);
+        Scanf(“%f”, &aposta);
+
+        // Permite ao usuário encerrar o programa voluntariamente
+        If (aposta == 0) {
+            Printf(“Você saiu do jogo. Saldo final: R$ %.2f\n”, saldo);
+            Break;
+        }
+
+        // Validação da aposta
+        If (aposta > saldo || aposta < 0) {
+            Printf(“Aposta inválida! Você não pode apostar mais do que possui ou valores negativos.\n\n”);
+            Continue;
+        }
+
+        // Escolha da modalidade/palpite
+        Printf(“Aposte no resultado de um dado (números de 1 a 6): “);
+        Scanf(“%d”, &palpite);
+
+        If (palpite < 1 || palpite > 6) {
+            Printf(“Palpite inválido! Escolha um número entre 1 e 6.\n\n”);
+            Continue;
+        }
+
+        Printf(“\nGirando os dados...\n”);
+        // Gera um número pseudoaleatório entre 1 e 6
+        Dado = (rand() % 6) + 1;
+        Printf(“O dado parou no número: %d\n”, dado);
+
+        // Verificação do resultado (Se acertar, ganha 3x o valor)
+        If (palpite == dado) {
+            Float ganho = aposta * 3;
+            Saldo += ganho;
+            Printf(“PARABÉNS! Você acertou e ganhou R$ %.2f!\n”, ganho);
+        } else {
+            Saldo -= aposta;
+            Printf(“Que pena, você errou. Perdeu R$ %.2f.\n”, aposta);
+        }
+
+        Printf(“-----------------------------------------\n\n”);
+    }
+
+    If (saldo <= 0) {
+        Printf(“Fim de jogo! Seu saldo acabou.\n”);
+    }
+
+    Return 0;
+}
+
+20.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Função que sorteia 5 números e conta quantos acertos o usuário teve
+int avaliarApostas(int d1, int d2, int d3, int d4, int d5) {
+    int sorteados[5];
+    int acertos = 0;
+    
+    printf("\nAs dezenas sorteadas são: ");
+    for(int i = 0; i < 5; i++) {
+        sorteados[i] = (rand() % 60) + 1; // Sorteia números de 1 a 60
+        printf("%d", sorteados[i]);
+        
+        // Verifica se o número sorteado é igual a alguma das dezenas do usuário
+        if(sorteados[i] == d1 || sorteados[i] == d2 || sorteados[i] == d3 || sorteados[i] == d4 || sorteados[i] == d5) {
+            acertos++;
+        }
+    }
+    printf("\n");
+    return acertos;
+}
+
+// Função principal
+int main() {
+    int dezenas[5];
+    int i;
+    int aposta = 0;
+
+    // Inicializa o gerador de números aleatórios
+    srand(time(NULL));
+
+    // Lendo as dezenas do usuário
+    for(i = 0; i < 5; i++) {
+        printf("Digite o numero %d: ", i + 1);
+        scanf("%d", &dezenas[i]);
+        
+    
+        }
+
+    // Chama a função passando as 5 dezenas
+    aposta = avaliarApostas(dezenas[0], dezenas[1], dezenas[2], dezenas[3], dezenas[4]);
+
+    // Verificação dos acertos
+    if (aposta == 3) {
+        printf("Tres dezenas sorteadas (Terno)!\n");
+    }
+    else if(aposta == 4) {
+        printf("Quatro dezenas sorteadas (Quadra)!\n");
+    }
+    else if(aposta == 5) {
+        printf("Cinco dezenas sorteadas (Quina)!\n");
+    }
+    else if(aposta == 0) {
+        printf("Nenhum acerto.Fim da aposta.\n");
+    }
+    else {
+        printf("Voce acertou %d dezenas.\n", aposta);
+    }
+
+    return 0;
+}
+
+
+
+
+21.
+#include <stdio.h>
+#include <string.h>
+
+// Protótipo da função
+int validarCPF(int num) {
+    // Verificação
+    int count = 0;
+    
+    
+    for(int i = 0; i <= 2; i++) {
+        count++;
+    }
+    
+    // Corrigido: Faltava o retorno da função que foi declarada como int
+    return count; 
+}
+
+// Função principal
+int main () {
+    int num = 0; 
+    int digito_verificador; 
+    
+    //Entrada 
+    printf("Digite o digito do CPF para validar: ");
+    scanf("%d" , &num);
+    
+    digito_verificador = validarCPF(num); 
+    
+    if(digito_verificador == 2 || digito_verificador == 0) {
+        printf("Mensagem: CPF valido.\n");
+    } 
+    else {
+        printf("Mensagem invalida do cpf.\n");
+    }
+
+    return 0;
+}
+
+22.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Modificamos a assinatura para receber o vetor e o seu tamanho
+Int nummaisvezes(int vetor[], int tamanho);
+
+Int main() {
+    Int num[6] = {0};
+    Int numero_ganhador = 0;
+    Int i;
+
+    Srand(time(NULL));
+
+    Printf(“Os sorteados de (1 a 6) são: “);
+    For(i = 0; i < 6; i++) {
+        Num[i] = (rand() % 6) + 1;
+        Printf(“%d “, num[i]);
+    }
+    Printf(“\n”);
+
+    // Passamos o vetor inteiro para a função
+    Numero_ganhador = nummaisvezes(num, 6);
+
+    Printf(“O numero que mais saiu foi: %d\n”, numero_ganhador);
+
+    // Sua verificação original
+    If(numero_ganhador > 0) {
+        Printf(“resultado diario.\n”);
+    }
+    Else {
+        Printf(“Resultado mensal.\n”);
+    }
+    
+    Return 0;        
+}
+
+// IMPLEMENTAÇÃO DA FUNÇÃO (O que estava faltando)
+Int nummaisvezes(int vetor[], int tamanho) {
+    // Vetor para contar as aparências dos números de 1 a 6 (índices de 0 a 6, ignoramos o 0)
+    Int contagem[7] = {0}; 
+    Int i;
+
+    // Conta quantas vezes cada número apareceu
+    For(i = 0; i < tamanho; i++) {
+        Contagem[vetor[i]]++;
+    }
+
+    Int maior_qtd = 0;
+    Int vencedor = 0;
+
+    // Descobre qual número teve a maior contagem
+    For(i = 1; i <= 6; i++) {
+        If(contagem[i] > maior_qtd) {
+            Maior_qtd = contagem[i];
+            Vencedor = i;
+        }
+    }
+
+    Return vencedor;
+}
+
+23.
+#include<stdio.h>
+#include<stdbool.h>
+//Protipo da função ser bissexto
+bool quantosdias(int ano) {
+    return(ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
+}
+
+//Função principal
+int main () {
+    int dia_atual = 17;
+    int mes = 10;
+    int ano = 2026;
+
+    //Calculo total dias
+    int dias_por_mes[] = {31,quantosdias(ano)? 29:28,31,30,31,30,31,30,31,30,31,30,31};
+    int total_dias = 0;
+
+    //soma dias
+    for(int i = 0; i < mes -1; i++) {
+        total_dias += dias_por_mes[i];
+    }
+
+    //mes atual
+    total_dias += dia_atual;
+
+     //saida
+    printf("Data: %02d/%02d/%d\n", dia_atual,mes,ano);
+    printf("O ano de %d tem um total de: %d dias ate esta data.\n", ano,total_dias);
+        
+    return 0;
+}
+
+
+
+    
+
+
+
+
+
+25.
+#include<stdio.h>
+#include<stdlib.h>
+
+//Protipo da função
+int dois¬_numeros (int a, int b) {
+    return a + b;
+}
+
+//Função principal
+int main () {
+    //Declaração das variaveis
+    int num1 , num2 ;
+    int soma = 0;
+    float dobrar;
+    int num = 0;
+
+    //Entrada 
+    printf("Digite o primeiro numero: ");
+    scanf("%d" , &num1);
+    printf("Digite o segundo numero: ");
+    scanf("%d" , &num2);
+
+    //Processamento
+    dobrar = num2 * 2.0;
+
+    //Chamar a função
+    soma = dois_numeros(num1 , num2);
+
+    //verificação da soma dos dois numeros
+    if(soma % 2 != 0) {
+        printf("A soma dos numeros da segunda coluna.\n");
+    }
+
+    else {
+        printf("Soma invalida da coluna.\n");
+    }
+
+    //Saida
+    printf("O produto do dois numeros e: %d\n", num1 * num2);
+
+    return 0;
+}
+
+
+#include<stdio.h>
+//Função para calcular 10 pares
+int dois_numeros(int var, float mult) {
+    return var * mult;
+}
+
+//Função principal
+int main () {
+    //Declaração das varivaeis
+    int variaveis[10] = {2,4,7,10,9,12,15,6,20,11};
+    float multiplicadores[10] = {5.0,3.0,8.0,6.0,2.0,4.0,2.0,1.0,5.0,3.0};
+    float par = 0;
+    
+
+    //processamento
+    for(int i = 0; i < 10; i++) {
+   
+        //chamar a função
+        par = dois_numeros(variaveis[i], multiplicadores[i]);
+
+        //Saida
+        printf("Produto %d: %.0f\n", i + 1, par);
+    }
+
+        return 0;
+    
+}
+
+36.
+#include<stdio.h>
+#include<ctype.h>
+
+//Protipo da função
+void caracteredoUsuario(char *S, char *N) {
+    *S = 'S';
+    *N = 'N';
+
+}
+
+//Função principal
+int main () {
+    //Declaração das varivaeis
+    int N = 0;
+    int S = 0;
+    char resposta;
+    char caract;
+
+    //Entrada
+    printf("Digite o caractere do usuario: ");
+    
+    scanf(" %c " , &caract);
+
+    //Chamar a função
+     caracteredoUsuario(&S , &N);
+
+    //Verificação dos caracteres N e S
+    if(caract == N || caract == S) {
+        printf("Caractere valido.\n");
+    } else {
+        printf("Caractere invalido.\n");
+    }
+
+    //Mensagem
+    do {
+        printf("Deseja continuar ? (S/N): ");
+        scanf(" %c " , &resposta);
+    }while (resposta == 'S' || resposta == 'S');
+
+    printf("Programa encerrando.\n");
+
+    return 0;
+}
+
+47.
+#include<stdio.h>
+//Protipo da função
+int numeroPrimo(int num) {
+    if(num <= 1) {
+        return 0;
+    }
+        // verificação divisivel
+        for(int d = 2; d * d <= num; d++) {
+            if(num % d == 0) {
+                return 0;
+            }
+        }
+
+    return 1;
+}
+
+//Função principal
+int main () {
+    //Declaração das variveis
+    int num = 0;
+    int resultado = 0;
+    //Entrada de dados
+    printf("Digite um numero: ");
+    scanf("%d" , &num);
+
+    //Chamar a função
+    resultado = numeroPrimo(num);
+
+    //Verificação se e primo
+    if(resultado == 1) {
+        printf("O numero %d e primo.\n", num);
+    } else {
+        printf("O numero %d nao e primo.\n", num);
+    }
+
+    return 0;
+
+}
+
+
+
+
+48.
+#include<stdio.h>
+//Protipo da função
+int divisel(int x , int y) {
+    if(y == 0) {
+        return 1;
+    } else {
+        return(x / y) * y == x;
+    }
+   
+}
+
+//Função principal
+int main () {
+    //Declaração das varivaeis
+    int num_x = 0, num_y = 0;
+    int resultado = 0;
+
+    //Entrada de dados
+    printf("Digite o numero de x: ");
+    scanf("%d" , &num_x);
+    printf("Digite o numro de y: ");
+    scanf("%d" , &num_y);
+
+    //Chamar a função
+    resultado = divisel(num_x, num_y);
+
+    //Verificação se divisivel
+    if(resultado == 1) {
+        printf("%d e divisel por %d\n", num_x,num_y);
+    } else {
+        printf("%d nao e divisivel por %d\n", num_x,num_y);
+    }
+
+    return 0;
+}
+
+
+
+#include<stdio.h>
+#include<ctype.h>
+//Protipo da função
+int caracteredoUsuario(char zd) {
+    
+    if(isalpha(zd)) {
+        printf("O caractere e positivo 1:\n");
+    } else {
+        printf("O caractere e negativo  0:\n");
+    }
+
+    return 0;
+}
+
+//Função principal
+int main () {
+    //Declaração das variveis
+    char caractere1;
+    char caractere2;
+    //Entrada de dados
+    printf("Digite primeiro caractere %c e o segundo caractere: %c\n", caractere1 , caractere2);
+    scanf(" %c %c " , &caractere1, &caractere2);
+    //Chamar a função
+    caracteredoUsuario(caractere1);
+
+    return 0;
+}
+
+
+
+
+52.
+#include<stdio.h>
+//Protipo da função
+float calcularFatorial(int n) {
+    if(n < 0) {
+        return -1;
+    }
+
+    //inicialização
+    float fatorial = 1;
+
+    //Multiplica o valor
+    for(int i = 1; i <= n; i++) {
+        fatorial *= i;
+    }
+
+    return fatorial;
+}
+
+//Função principal
+int main () {
+    //Declaração das variaveis
+    int numero = 0;
+    //Entrada
+    printf("Digite o numero natural: ");
+    scanf("%d" , &numero);
+
+    //Saida
+    printf("O fatorial de %d e: %.0f\n", numero,calcularFatorial(numero));
+    return 0;
+
+}
+ 
+
+
+
+
+
+
+
