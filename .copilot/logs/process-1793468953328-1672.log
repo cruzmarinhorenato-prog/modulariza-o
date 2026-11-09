@@ -1,3 +1,0 @@
-2026-10-31T17:49:13.369Z [INFO] Native runtime logging initialized
-2026-10-31T17:49:13.532Z [WARNING] [rust:standalone_host::standalone::transport] Unable to locate runtime-bundled skills beside the native runtime
-2026-10-31T18:41:25.208Z [WARNING] [rust:standalone_host::standalone] Standalone JSON-RPC one-way host call failed {"error":"Standalone server does not support host call 'lifecycle_server_shutdown_finalize'"}
